@@ -1,0 +1,117 @@
+@charset "utf-8";
+.roundClock{
+	width:200px;
+	height:200px;
+	border-radius:50%;
+	margin:50px auto;
+	position:fixed;
+	right:-20px;
+	top:-70px;
+	transform: scale(.7);
+	opacity:.3;
+	transition: 1s;
+}
+.roundKedu {
+	position: relative;
+	width: 200px;
+	height: 200px;
+}
+.roundKedu span {
+	position:absolute;
+	top:0;
+	left:99px;
+	width:2px;
+	height:7px;
+	transform-origin:center 100px;
+	background:#ccc;
+}
+.roundKedu span:nth-of-type(5n + 1){
+	height: 14px;
+	background: #fff;				// 每五根长度是相对长的,即每小时
+}
+.roundHours {
+	position:absolute;
+	top:45px;
+	left:97px;
+	width:6px;
+	height:55px;
+	background: #000;
+	transform-origin: bottom;
+	border-radius: 3px;
+}
+.roundMinutes {
+	position:absolute;
+	top:25px;
+	left:98px;
+	width: 4px;
+	height: 75px;
+	background: #000;
+	transform-origin: bottom;
+	border-radius: 3px;
+}
+.roundSeconds {
+	position:absolute;
+	top:10px;
+	left:99px;
+	width:2px;
+	height:90px;
+	background: red;
+	transform-origin: bottom;
+	border-radius: 3px;
+}
+.roundIcons {
+	position: absolute;
+	left:0px;
+	top:0px;
+	width:200px;
+	height:200px;
+	background: rgba(0,0,0,.5) ;
+	border-radius: 50%;
+	z-index:-1;
+}
+
+#calendar {
+	position: fixed;
+	right:0;
+	bottom:-300px;
+	background:rgba(0,0,0,.5);
+	width:400px;
+	color:#fff;
+}
+#calendar th {
+	text-align:center;
+	padding:5px;
+}
+#calendar table {
+	margin-top:50px;
+}
+#calendar td {
+	text-align:center;
+	padding:5px;
+}
+#calendar td:hover {
+	border:1px solid red;
+}
+#calendar #showM {
+	font:30px/50px '宋体';
+	height:50px;
+	position:absolute;
+	right:0;
+}
+#calendar p {
+	height:20px;
+}
+#calendar select {
+	position:absolute;
+	right:0;
+	top:45px;
+	background:none;
+	outline:none;
+	border-radius:5px;
+}
+#calendar #yearSelect {
+	right:60px;
+}
+#calendar #monthSelect {
+	right:5px;
+}

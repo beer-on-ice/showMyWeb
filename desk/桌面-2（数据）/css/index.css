@@ -1,0 +1,176 @@
+body,
+p {
+	margin:0;
+}
+body {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+ul {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+#bg {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: url('../img/bg/1.jpg')  no-repeat center center;
+	background-size: cover;
+	z-index:-999;
+}
+
+.subMenu,
+.conTextMenu {
+	display:none;
+	position:fixed;
+	left:50px;
+	top:100px;
+	width:150px;
+	padding:10px 5px;
+	text-indent: 15px;
+	color:#fff;
+	background: rgba(0,0,0,0.5);
+	box-shadow: 3px 3px 3px #000;
+}
+.subMenu li {
+	position: relative;
+	font: 14px/28px "宋体";
+	border-bottom: 1px solid #eee;
+	padding: 0 10px;
+}
+.conTextMenu li {
+	position: relative;
+	font: 14px/28px "宋体";
+	border-bottom: 1px solid #eee;
+	padding: 0 10px;
+}
+.conTextMenu ul {
+	display: none;
+	position: absolute;
+	left: 150px;
+	top: 0;
+	width: 130px;
+	padding:5px 5px;
+	background: rgba(0,0,0,0.6);
+}
+.menuActive  {
+	background:indianred;
+}
+#files {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+.file {
+	box-sizing: border-box;
+	position: absolute;
+	padding: 5px;
+	width: 120px;
+	height: 100px;
+	text-align: center;
+	border: 1px solid transparent;
+	z-index: 1;
+}
+.file p {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	font: 14px/30px Arial,"宋体";
+	color: #fff;
+}
+.file .img {
+	margin: 0 auto;
+	width: 59px;
+	height: 51px;
+	background: no-repeat center;
+	background-size: cover;
+}
+.file input {
+	display: none;
+	box-sizing: border-box;
+	width: 100%;
+	height: 30px;
+	font: 14px/30px Arial,"宋体";
+	border: none;
+	text-align: center;
+}
+.file.hover {
+	background: rgba(255, 255, 255, .1);
+	border: 1px solid rgba(255, 255, 255, .5);
+}
+.file.active {
+	background: rgba(255, 255, 255, .2);
+	border: 1px solid rgba(255, 255, 255, .8);
+}
+.file.hover.active {
+	background: rgba(255, 255, 0, .2);
+	border: 1px solid rgba(255, 255, 255, .8);
+}
+#trash {
+	left: 0;
+	top: 0;
+	background: url('../img/img/trash.png') no-repeat center bottom;
+	background-size: contain;
+}
+#trash.hover {
+	border-color: transparent;
+	background-image: url('../img/img/open.png')
+}
+
+.selectArea {
+	position: fixed;
+	box-sizing: border-box;
+	background: rgba(0, 0, 255, .1);
+	border: 1px solid rgba(0, 0, 255, .5);
+}
+.info {
+	position: fixed;
+	left: 50%;
+	top: -50px;
+	width: 500px;
+	height: 50px;
+	margin:0 0 0 -250px;
+	font: 30px/50px "宋体";
+	text-align: center;
+	background: rgba(0,0,0,.3);
+	color:#fff;
+	border-radius: 0 0 10px 10px;
+	z-index:9999;
+}
+
+/*上传文件部分*/
+#fileDetail {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.8);
+	display: none;
+}
+.fileDetailCols {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	font-size: 40px;
+	color: #fff;
+	text-decoration: none;
+}
+#fileDetail p {
+	margin: 5px auto;
+	width: 70%;
+	color: #fff;
+	font: 14px/30px "宋体";
+}
+#fileDetail img,
+#fileDetail video,
+#fileDetail audio {
+	margin: 30px auto;
+	display: block;
+}
