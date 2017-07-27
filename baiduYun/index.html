@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="css/css.css"/>
+<title></title>
+</head>
+<body>
+<div id="logInMask">
+    <span class="logo"></span>
+    <div id="logInWrap">
+        <span class="logInalert"></span>
+        <div id="logText">
+            <input type="text" class="logName" placeholder="请输入手机号">
+            <input type="text" class="logPassword" placeholder="密码">
+        </div>
+        <label>
+            <input type="checkbox" >
+            下次自动登录
+        </label>
+        <button id="logInsure"></button>
+    </div>
+</div>
+<div id="bg"></div>
+<header id="header">
+  <div class='headerLeft'><a href="javascript:;" class='active'>网盘</a><a href="javascript:;">分享</a><a href="javascript:;">更多</a></div>
+  <div class="headerRight">
+    <div id = 'logWrap'></div>
+    <figure class='logMessage'></figure>
+    <div id = 'logWrap2'>
+        <a href="javascript:;" id='logIn'>登陆</a>
+        <a href="javascript:;" id='regesiter'>注册</a>
+    </div>
+    <span>|</span>
+    <a href="javascript:;">客户端下载</a>
+    <a href="javascript:;" class='ring'></a>
+    <a href="javascript:;" class='return'></a>
+    <a href="javascript:;" class='skin'></a>
+    <a href="javascript:;" class='vipSpace'></a>
+  </div>
+</header>
+<main id='main'>
+  <section class='mainR'>
+      <!-- 创建，重命名按钮 -->
+      <div id="nameTxt">
+          <button id='uploadFileBtn' class='uploadFile'></button>
+          <button id="createBtn"></button>
+          <button id="offlineBtn"></button>
+          <button id="myDevice"></button>
+          <div id='nameChosen'>
+            <input type="text" id="filename">
+            <button id="nameRight">√</button>
+            <button id="nameWrong">×</button>
+          </div>
+      </div>
+      <!-- 控制条 -->
+      <div id='fileBar'>
+        <button id="fileShare">分享</button>
+        <button id="fileDownload">下载</button>
+        <button id="fileDelete">删除</button>
+        <button id="renameBtn">重命名</button>
+        <button id="fileCopyto">复制到</button>
+        <button id="fileMoveto">移动到</button>
+        <button id="fileMore">更多</button>
+      </div>
+      <!-- 搜索排序视图按钮 -->
+      <div id="sortSearchSee">
+        <input type="text" id="searchInput" placeholder="搜索您的文件">
+        <span id='sortBtn'></span>
+        <span id='viewBtn'></span>
+        <ul id="sortMenu">
+          <li>名字排序</li>
+          <li>时间排序</li>
+          <li>类型排序</li>
+        </ul>
+      </div>
+      <!-- 路径 -->
+      <div id="paths">
+          <a href="javascript:;" id="back">返回上一级</a>
+          <strong id="line"> | </strong>
+          <ul id="crumbs"></ul>
+      </div>
+      <!-- 已经选中几个文件夹 -->
+      <div id='choseNub'>
+        <input type="checkbox" value='' id='choseAll'>
+        <label for='choseAll' id="choseAlll">全选</label>
+        <p>已选中<span id='hasChosen'>0</span>个文件/文件夹</p>
+      </div>
+      <!-- 文件列表 -->
+      <ul id="list"></ul>
+      <!-- 右键菜单 -->
+      <ul class="conTextMenu"></ul>
+      <!-- 文件内容 -->
+      <div id="fileDetail">
+      	<div></div>
+      	<a href="javascript:;" id="fileDetailCols">x</a>
+      </div>
+      <input type="file" id="fileBtn" style="display: none;">
+    </section>
+</main>
+<!-- 侧边栏 -->
+<aside id="aside">
+  <ul>
+    <li class='allfile active'><a href="javascript:;">全部文件</a></li>
+    <li class='allimage'><a href="javascript:;">图片</a></li>
+    <li class='alltext'><a href="javascript:;">文档</a></li>
+    <li class='allvideo'><a href="javascript:;">视频</a></li>
+    <li class='alltorrt'><a href="javascript:;">种子</a></li>
+    <li class='allaudio'><a href="javascript:;">音乐</a></li>
+    <li class='allothers'><a href="javascript:;">其它</a></li>
+    <li class='myshare'><a href="javascript:;">我的分享</a></li>
+    <li id='trash'><a href="javascript:;">回收站</a></li>
+  </ul>
+  <div>
+    <a href="javascript:;" class='com'></a>
+    <a href="javascript:;" class='rob'></a>
+    <a href="javascript:;" class='apple'></a>
+    <a href="javascript:;" class='etc'></a>
+  </div>
+</aside>
+<!-- 重名遮罩 -->
+<div id="mask">
+  <div id="info">
+    <button id="turnOff"></button>
+    <button id="sure"></button>
+    <button id="cancel"></button>
+  </div>
+</div>
+<!-- 复制或移动到文件夹树 -->
+<div id="treeMask">
+  <div id="treeWrap">
+    <button id="treeOff"></button>
+    <button id="treeNew"></button>
+    <button id="treeSure"></button>
+    <button id="treeCancel"></button>
+    <ul id="tree"></ul>
+  </div>
+</div>
+<!-- 复制移动提示 -->
+<div id="notThis"></div>
+</body>
+<!-- jQuery -->
+<script src="js/jquery-3.2.1.js" charset="utf-8"></script>
+<!-- 拼音排序 -->
+<script src="js/pinyin.js" type="text/javascript"></script>
+<script src="js/m.touchTap.js" type="text/javascript"></script>
+<!-- 存放数据 -->
+<script src="js/data.js" type="text/javascript"></script>
+<!-- 操作数据-只操作数据 -->
+<script src="js/model.js"></script>
+<!-- 要复用的函数部分 -->
+<script src="js/function.js" type="text/javascript"></script>
+<!-- 业务逻辑部分 -->
+<script src="js/index.js" type="text/javascript"></script>
+</html>

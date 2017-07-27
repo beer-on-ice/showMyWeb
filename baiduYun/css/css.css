@@ -1,0 +1,851 @@
+body,
+p,
+input,
+select,
+button,
+figure {
+	margin:0;
+	padding:0;
+	outline:none;
+	vertical-align: top;
+}
+html,
+body {
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+strong {
+  font-style:none;
+  font-weight: normal;
+}
+body {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+a {
+	text-decoration:none;
+}
+ul {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+#bg {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background:#eff4f8;
+	background-size: cover;
+	z-index:-999;
+}
+#header {
+  width: 100%;
+  height:62px;
+  background: url(../img/cloud/logo.png) no-repeat 20px 15px;
+  position:relative;
+}
+#header .headerLeft {
+  float:left;
+  margin:15px 0  0 198px;
+  height:38px;
+}
+#header .headerLeft a {
+  float:left;
+  font:16px/32px '微软雅黑';
+  color:#424e67;
+  margin: 0 26px;
+  padding-bottom:8px;
+}
+#header .headerLeft a.active {
+  border-bottom:4px solid #3b8cff;
+  color:#3b8cff;
+}
+#header .headerRight {
+  float:right;
+  margin-top:15px;
+  height:32px;
+}
+#header .headerRight a {
+  float:left;
+  font:16px/32px '微软雅黑';
+  color:#424e67;
+  margin:0 15px;
+  height:32px;
+}
+#header #logWrap2 a {
+ 	float:left;
+	margin:0 10px;
+}
+#header .headerRight span {
+  float:left;
+  margin-top:5px;
+}
+#header .headerRight .ring {
+  width:17px;
+  height:18px;
+  margin:7px 10px;
+  background: url(../img/cloud/ring.png) no-repeat;
+}
+#header .headerRight .return {
+  width:17px;
+  height:19px;
+  margin:7px 10px;
+  background: url(../img/cloud/return.png) no-repeat;
+}
+#header .headerRight .skin {
+  width:22px;
+  height:19px;
+  margin:7px 10px;
+  background: url(../img/cloud/skin.png) no-repeat;
+}
+#header .headerRight .vipSpace {
+  width:78px;
+  height:32px;
+  margin:3px 19px;
+  background: url(../img/cloud/vipSpace.png) no-repeat;
+}
+
+#aside {
+  margin-left: -100%;
+  float:left;
+  margin-top:10px;
+  width:193px;
+  height:500px;
+  position:relative;
+}
+#aside ul {
+  width:100%;
+  font:16px/38px '微软雅黑';
+}
+#aside ul a{
+  float:left;
+  color:#424e67;
+  text-indent: 53px;
+}
+#aside ul li{
+  width:100%;
+  height:38px;
+  margin: 10px 0;
+}
+#aside ul li:hover{
+  background-color:#e4e9ec;
+}
+#aside ul li.active{
+  background-color:#e4e9ec;
+}
+#aside ul li.active a {
+  color:#3b8cff;
+}
+#aside ul .allfile {
+  background:url(../img/cloud/allfile.png) no-repeat 24px 13px;
+}
+#aside ul .allfile.active {
+	background:#e4e9ec url(../img/cloud/allfile2.png) no-repeat 24px 13px;
+}
+#aside ul .myshare {
+  background:url(../img/cloud/myshare.png) no-repeat 24px 13px;
+}
+#trash {
+  background:url(../img/cloud/trash.png) no-repeat 24px 13px;
+}
+#aside div {
+  margin:80px 0 0 10px;
+  height:18px;
+}
+#aside div a {
+  float:left;
+  margin:0 10px;
+}
+#aside div .com {
+  width:20px;
+  height:18px;
+  background: url(../img/cloud/com.png) no-repeat;
+}
+#aside div .rob {
+  width:16px;
+  height:18px;
+  background: url(../img/cloud/rob.png) no-repeat;
+}
+#aside div .apple {
+  width:17px;
+  height:18px;
+  background: url(../img/cloud/apple.png) no-repeat;
+}
+#aside div .etc {
+  width:20px;
+  height:6px;
+  margin-top:6px;
+  background: url(../img/cloud/etc.png) no-repeat;
+}
+
+#main {
+  	width: 100%;
+	float: left;
+  	height:565px;
+}
+#main .mainR {
+  position:relative;
+  height:100%;
+  margin:10px 0 0 193px;
+  background:#fff;
+  border:1px solid #ccc;
+  border-bottom:none;
+  border-radius:5px;
+}
+
+/*创建输入框部分*/
+#nameTxt {
+	float:left;
+	margin:10px 0 0 10px;
+}
+#nameTxt .uploadFile {
+  width:86px;
+  height:34px;
+  border:none;
+  background:url(../img/cloud/uploadFile.png) no-repeat;
+
+}
+#nameTxt button {
+	float:left;
+	margin-left:10px;
+}
+#createBtn {
+  width:111px;
+  height:34px;
+	border:none;
+	color:#fff;
+	background:url(../img/cloud/createBtn.png) no-repeat;
+}
+#offlineBtn {
+  width:98px;
+  height:34px;
+	border:none;
+	color:#fff;
+	background:url(../img/cloud/offlineD.png) no-repeat;
+}
+#myDevice {
+  width:98px;
+  height:34px;
+	border:none;
+	color:#fff;
+	background:url(../img/cloud/myDevice.png) no-repeat;
+}
+#nameChosen {
+    display:none;
+}
+#filename {
+	border:none;
+	border-radius:5px;
+	padding:0 10px;
+	height:25px;
+	color:#fff;
+	background:rgba(0,0,0,.3);
+  position:absolute;
+  top:35px;
+  left:90px;
+}
+#nameRight {
+  width:25px;
+  height:25px;
+  border:none;
+  background:rgba(0,0,0,.3);
+  color:#fff;
+  font:20px/25px Arial;
+  position: absolute;
+  top:35px;
+  left:280px;
+}
+#nameWrong {
+  width:25px;
+  height:25px;
+  border:none;
+  background:rgba(0,0,0,.3);
+  color:red;
+  font:20px/25px Arial;
+  position: absolute;
+  top:35px;
+  left:306px;
+}
+#filetype {
+	border:none;
+	border-radius:5px;
+	padding:0 10px;
+	color:#fff;
+	height:25px;
+	background:rgba(0,0,0,.6);
+}
+#fileBar {
+	display: none;
+	float:left;
+	width:503px;
+	height: 32px;
+	border: 1px solid #c0d9fe;
+	border-radius:4px;
+	margin:10px 0 0 20px;
+}
+#fileBar button {
+	text-align: center;
+	border:none;
+	background: none;
+	width:70px;
+	height:32px;
+  font:14px/32px '微软雅黑';
+	background: #fff;
+	color:#3b8cff;
+	border-right:1px solid #c0d9fe;
+	float:left;
+}
+#fileBar #fileMore {
+	border-right:none;
+	background: url(../img/cloud/fileMore.png) no-repeat 10px;
+	text-indent: 20px;
+}
+#fileBar #fileDownload {
+	background: url(../img/cloud/fileDownload.png) no-repeat 10px;
+	text-indent: 20px;
+}
+#fileBar #fileShare {
+	background: url(../img/cloud/fileShare.png) no-repeat 10px;
+	text-indent: 20px;
+}
+#fileBar #fileDelete {
+	background: url(../img/cloud/fileDelete.png) no-repeat 10px;
+	text-indent: 20px;
+}
+
+/*路径部分*/
+#paths {
+    margin-top: 60px;
+		padding:0 20px;
+		height:16px;
+		font:12px/20px '宋体';
+}
+#paths a {
+		color:#4287ed;
+}
+#back {
+  display:none;
+}
+#paths strong {
+		color:#c5d8f3;
+    display:none;
+}
+#paths span {
+    margin:0 10px;
+		color:#c5d8f3;
+}
+#paths .line {
+	  font-size:12px;
+}
+#crumbs {
+    display:inline-block;
+}
+#crumbs li {
+    display: inline-block;
+}
+
+/*全选按钮*/
+#choseNub {
+	margin:0 0 0 20px;
+	height:40px;
+}
+#choseAll {
+	width:15px;
+	height:15px;
+	float:left;
+	margin-top:20px;
+}
+#choseAlll{
+	margin:17px 0 0 5px;
+	font:16px/20px '微软雅黑';
+	float:left;
+}
+#choseNub p {
+	margin:17px 0 0 10px;
+	width:200px;
+	font:14px/20px '微软雅黑';
+	float:left;
+	display: none;
+}
+#choseNub span {
+	width:10px;
+}
+
+/*搜索排序视图*/
+#sortSearchSee {
+	float:right;
+	margin-top:10px;
+}
+#searchInput {
+  float:left;
+  background: #f1f2f4 url(../img/cloud/searchIco.png) no-repeat 216px 9px;
+  border:none;
+  width:224px;
+  padding:10px;
+  border-radius:10px;
+}
+#sortBtn {
+  float:left;
+  width:26px;
+  height:15px;
+  background: url(../img/cloud/sortBtnIco.png) no-repeat;
+  margin:10px 10px 0 ;
+}
+#sortSearchSee ul {
+    display:none;
+    width:100px;
+    height:90px;
+    border:1px solid #c5d8f3;
+    color:#4287ed;
+    position:absolute;
+    top:36px;
+    right:50px;
+    padding:5px 0;
+    text-align:center;
+    border-radius:10px;
+}
+#sortSearchSee ul li {
+  width:100%;
+  height:30px;
+  font:16px/30px '微软雅黑';
+}
+#sortSearchSee ul li:hover {
+  background: #f6faff;
+}
+#viewBtn {
+  float:left;
+  width:20px;
+  height:16px;
+  background: url(../img/cloud/viewIco1.png) no-repeat;
+  margin:10px 23px 0 2px;
+}
+
+/*右键菜单部分*/
+.subMenu,
+.conTextMenu {
+	display:none;
+	position:fixed;
+	left:50px;
+	top:100px;
+	width:120px;
+	padding:10px 5px;
+	text-indent: 10px;
+	color:#000;
+	background: #fff;
+	box-shadow: 1px 2px 2px 2px #ccc;
+	border-radius:10px;
+}
+.subMenu li {
+	position: relative;
+	font: 14px/28px "宋体";
+	border-bottom: 1px solid #e9e9e9;
+	padding: 0 10px;
+}
+.conTextMenu li {
+	position: relative;
+	font: 14px/28px "宋体";
+	border-bottom: 1px solid #e9e9e9;
+	padding: 0 10px;
+}
+.conTextMenu ul {
+	display: none;
+	position: absolute;
+	left: 120px;
+	top: 0;
+	width: 120px;
+	padding:5px 5px;
+	background: #fff;
+}
+.menuActive  {
+	background:#4281f4;
+}
+
+/*文件部分*/
+#list {
+    border-top:1px solid #c5d8f3;
+		float:left;
+		width:100%;
+}
+#list li {
+		border:1px solid transparent;
+		float: left;
+		margin:20px;
+    width: 120px;
+    height: 120px;
+		position: relative;
+}
+#list figure {
+		width: 80px;
+		height: 80px;
+		margin:10px 0 0 20px;
+}
+#list li div {
+		font:13px/20px '宋体';
+		position:relative;
+}
+#list li p {
+    text-align: center;
+		margin-top:5px;
+}
+#list li label {
+	width:19px;
+	height:19px;
+	position:absolute;
+	top:3px;
+	left:3px;
+	background: url(../img/cloud/chosenlogo.png) no-repeat;
+}
+#list li input[type='text'] {
+		position: absolute;
+		top:0;
+		left:20px;
+		text-align: center;
+		width:80px;
+		padding:4px 2px;
+		border-radius: 4px;
+		border:none;
+}
+#list li input[type='checkbox'] {
+		display: none;
+		width:20px;
+		height:20px;
+		position:absolute;
+		top:3px;
+		left:3px;
+}
+#list li.liHover{
+	background:#f1f5fa;
+	border-radius:5px;
+}
+#list li.liActive {
+		border:1px solid #90c3fd;
+		background:#f1f5fa;
+		border-radius:5px;
+}
+#list li.liActive label{
+	background:url(../img/cloud/chosenlogo2.png) no-repeat;
+}
+#list li.liHover.liActive label{
+	background:url(../img/cloud/chosenlogo2.png) no-repeat;
+}
+#list li.liHover.liActive {
+		border:1px solid #90c3fd;
+		background:#f1f5ef;
+		border-radius:5px;
+}
+#list figure.floder {
+   	background:url(../img/img/file2.png) no-repeat center;
+   	background-size: contain;
+}
+#list figure.html {
+	background:url(../img/img/html.png) no-repeat center;
+	background-size: contain;
+}
+#list figure.exe {
+	background:url(../img/img/exe.png) no-repeat center;
+	background-size: contain;
+}
+#list figure.image {
+	background:url(../img/img/img2.png) no-repeat center;
+	background-size: contain;
+}
+#list figure.video {
+	background:url(../img/img/video2.png) no-repeat center;
+	background-size: contain;
+}
+#list figure.audio {
+	background:url(../img/img/audio2.png) no-repeat center;
+	background-size: contain;
+}
+#list figure.text {
+	background:url(../img/img/txt2.png) no-repeat center;
+	background-size: contain;
+}
+
+/*文件内容部分*/
+#fileDetail {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.5);
+	display: none;
+	z-index:99999;
+}
+#fileDetailCols {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	font-size: 40px;
+	color: #fff;
+	text-decoration: none;
+}
+#fileDetail p {
+	margin: 5px auto;
+	width: 500px;
+	height:600px;
+	background: #fff;
+	color: black;
+	word-break: break-all;
+	overflow:hidden;
+	font: 14px/30px "宋体";
+}
+#fileDetail img,
+#fileDetail video,
+#fileDetail audio {
+	margin: 30px auto;
+	display: block;
+}
+
+/*遮罩层*/
+#mask {
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,0.3);
+	z-index:9999;
+	display:none;
+}
+#info {
+	width:520px;
+	height:162px;
+	background:url(../img/cloud/info.png) no-repeat;
+	position: absolute;
+	top:50%;
+	left:50%;
+	margin:-81px 0 0 -260px;
+}
+#sure {
+	width:156px;
+	height:34px;
+	border:none;
+	background: url(../img/cloud/sure.png) no-repeat;
+	position:absolute;
+	bottom:15px;
+	left:125px;
+}
+#cancel {
+	width:104px;
+	height:34px;
+	border:none;
+	background: url(../img/cloud/cancel.png) no-repeat;
+	position:absolute;
+	bottom:15px;
+	left:291px;
+}
+#turnOff {
+	width: 12px;
+	height: 12px;
+	background: url(../img/cloud/turnOff.png) no-repeat;
+	position: absolute;
+	top:17px;
+	right:18px;
+	border:none;
+}
+
+/*框选部分*/
+.selectArea {
+	position:fixed;
+	box-sizing:border-box;
+	border:1px dotted blue;
+	background:rgba(0,0,255,.1);
+}
+
+/*结构树*/
+#treeMask {
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,0.3);
+	z-index:9999;
+	display:none;
+}
+#treeWrap {
+	width:520px;
+	height:321px;
+	background: url(../img/cloud/treeMask.png) no-repeat;
+	position: absolute;
+	top:50%;
+	left:50%;
+	margin:-160.5px 0 0 -260px;
+}
+#treeNew{
+	position: absolute;
+	left:10px;
+	bottom:15px;
+	width:111px;
+	height:34px;
+	background: url(../img/cloud/treeNew.png) no-repeat;
+	border:none;
+}
+#treeSure{
+	position: absolute;
+	left:236px;
+	bottom:15px;
+	width:132px;
+	height:34px;
+	background: url(../img/cloud/treeSure.png) no-repeat;
+	border:none;
+}
+#treeCancel{
+	position: absolute;
+	left:378px;
+	bottom:15px;
+	width:132px;
+	height:34px;
+	background: url(../img/cloud/treeCancel.png) no-repeat;
+	border:none;
+}
+#tree {
+	width:496px;
+	height:200px;
+	border:1px solid #ccc;
+	position: absolute;
+	top:55px;
+	left:11px;
+	overflow:auto;
+}
+#tree li {
+	width:100%;
+	height:30px;
+	font:14px/30px '微软雅黑';
+	box-sizing: border-box;
+	border-top: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+	padding-left:23px;
+}
+#tree li:nth-of-type(1) {
+	border-top: none;
+}
+#tree span {
+	width:18px;
+	height:30px;
+	padding:0 5px 0 38px;
+	float:left;
+}
+#tree strong {
+	float:left;
+	height:30px;
+	padding-left:25px;
+	background: url(../img/cloud/treeFloder.png) no-repeat 0 8px;
+}
+#tree li.active {
+	background:#e5f0fb;
+	border-color:#bbd4ef;
+}
+#notThis {
+	width: 239px;
+	height:39px;
+	background: url(../img/cloud/copyalert.png) no-repeat;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin: -180px 0 0 -60px;
+	display:none;
+}
+
+/*登录框*/
+#logInMask {
+	display:none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background:url(../img/bg/lonely.jpg) no-repeat;
+	background-size: cover;
+	z-index:999999;
+}
+#logInMask .logo {
+	width:167px;
+	height:36px;
+	background: url(../img/bg/logo.png) no-repeat;
+	position:absolute;
+	left:25px;
+	top:20px;
+}
+#logInWrap {
+	width:352px;
+	height:398px;
+	background: url(../img/cloud/logInWrap.png) no-repeat;
+	position:absolute;
+	right:120px;
+	bottom:140px;
+}
+#logText {
+	width:312px;
+	height:84px;
+	border:1px solid #ccc;
+	border-radius: 4px;
+	position:absolute;
+	left:20px;
+	top:88px;
+}
+#logText input {
+	width:312px;
+	height:42px;
+	border:none;
+	background:#faffbd;
+	border-radius: 4px;
+	padding:0 10px;
+	box-sizing: border-box;
+}
+#logText input:nth-of-type(1) {
+	border-bottom:1px solid #ccc;
+	border-radius: 4px 4px 0 0;
+}
+#logInWrap label {
+	position: absolute;
+	top:193px;
+	left:20px;
+	font:12px/1 '微软雅黑'
+}
+#logInWrap button {
+	width:312px;
+	height:41px;
+	position: absolute;
+	top:229px;
+	left:20px;
+	font:12px/1 '微软雅黑';
+	background: url(../img/cloud/logInSure.png) no-repeat;
+	border:none;
+}
+#logInWrap .logInalert {
+	position: absolute;
+	top:70px;
+	left:20px;
+	font:12px/1 '微软雅黑';
+	color:red;
+}
+#logWrap {
+	float:left;
+	width:156px;
+	height:34px;
+	background: url(../img/cloud/lonearrow.png) no-repeat;
+	display: none;
+}
+.logMessage {
+	width:240px;
+	height:312px;
+	background: url(../img/cloud/logMessage.png) no-repeat;
+	position: absolute;
+	top:70px;
+	right:260px;
+	z-index:9;
+	display: none;
+}
+#logWrap2 {
+	float:left;
+}
+#logWrap2 #logIn {
+	color:#f60;
+}
