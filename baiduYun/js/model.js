@@ -31,7 +31,7 @@ function viewTree() {
     var strong = document.createElement('strong');
     li.appendChild(strong)
     for(var i=0;i<item.level;i++) {
-      strong.style.marginLeft = ((i+1)*10) + 'px';
+      strong.style.marginLeft = ((i+1)*20) + 'px';
     }
     strong.innerHTML = name;
     li.setAttribute("treeid",id)
@@ -190,7 +190,7 @@ function getStickArr(info) {
 function deepCopy(p, c) {
     var c = c || {};
     for (var i in p) {
-        if (typeof p[i] === 'object') {
+        if (typeof p[i] === 'object' &&i != 'newClass') {
             c[i] = (p[i].constructor === Array) ? [] : {};
             deepCopy(p[i], c[i]);
         } else {

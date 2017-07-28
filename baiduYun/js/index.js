@@ -488,13 +488,24 @@ var contextmenuCallback = {
     })
     stickArr = [];
     for(var i=0;i<stickLi.length;i++) {
-      stickArr.push({
-        id:stickLi[i].item.id,
-        pid:stickLi[i].item.pid,
-        type:stickLi[i].item.type,
-        name:stickLi[i].item.name,
-        extname:stickLi[i].item.extname
-      })
+        if(stickLi[i].item.newClass) {
+            stickArr.push({
+              id:stickLi[i].item.id,
+              pid:stickLi[i].item.pid,
+              type:stickLi[i].item.type,
+              name:stickLi[i].item.name,
+              extname:stickLi[i].item.extname,
+              newClass:stickLi[i].item.newClass
+            })
+        } else {
+            stickArr.push({
+              id:stickLi[i].item.id,
+              pid:stickLi[i].item.pid,
+              type:stickLi[i].item.type,
+              name:stickLi[i].item.name,
+              extname:stickLi[i].item.extname
+            })
+        }
     }
     view(_ID);
     treeCancel.onclick = function() {
@@ -556,13 +567,24 @@ var contextmenuCallback = {
     })
     stickArr = [];
     for(var i=0;i<stickLi.length;i++) {
-      stickArr.push({
-        id:stickLi[i].item.id,
-        pid:stickLi[i].item.pid,
-        type:stickLi[i].item.type,
-        name:stickLi[i].item.name,
-        extname:stickLi[i].item.extname
-      })
+        if(stickLi[i].item.newClass) {
+            stickArr.push({
+              id:stickLi[i].item.id,
+              pid:stickLi[i].item.pid,
+              type:stickLi[i].item.type,
+              name:stickLi[i].item.name,
+              extname:stickLi[i].item.extname,
+              newClass:stickLi[i].item.newClass
+            })
+        } else {
+            stickArr.push({
+              id:stickLi[i].item.id,
+              pid:stickLi[i].item.pid,
+              type:stickLi[i].item.type,
+              name:stickLi[i].item.name,
+              extname:stickLi[i].item.extname
+            })
+        }
     }
     view(_ID);
     treeCancel.onclick = function() {
@@ -734,44 +756,4 @@ trash.onclick = function() {
     canChose()
   }
 }
-
-//	框选部分
-var lis = list.getElementsByTagName('li');
-list.onmousedown = function(e) {
-  if (e.button == 2) {
-    return;
-  }
-  var selectArea = document.createElement('div');
-  var startX = e.clientX;
-  var startY = e.clientY;
-  selectArea.className = 'selectArea';
-  selectArea.style.left = startX + 'px';
-  selectArea.style.top = startY + 'px';
-  list.appendChild(selectArea);
-  document.onmousemove = function(e) {
-    var nowX = e.clientX;
-    var nowY = e.clientY;
-    var disX = Math.abs(nowX - startX);
-    var disY = Math.abs(nowY - startY);
-    selectArea.style.width = Math.abs(nowX - startX) + 'px';
-    selectArea.style.height = Math.abs(nowY - startY) + 'px';
-    selectArea.style.left = Math.min(nowX, startX) + 'px';
-    selectArea.style.top = Math.min(nowY, startY) + 'px';
-    //	碰撞后框选
-    for (var i = 0; i < lis.length; i++) {
-      if (getCollide(selectArea, lis[i])) {
-        trash.className != 'active' && showFileBar();
-        canChose();
-        lis[i].classList.add('liActive');
-        lis[i].children[1].style.display = 'block';
-        chosenX[i].checked = true;
-      }
-    }
-  }
-  document.onmouseup = function(e) {
-    (selectArea.parentNode == list) && list.removeChild(selectArea);
-    var nub = list.querySelectorAll('.liActive').length;
-    hasChosen.innerHTML = nub;
-    choseAll.checked = nub == lis.length ? true : false;
-  }
-};
+selectRound();

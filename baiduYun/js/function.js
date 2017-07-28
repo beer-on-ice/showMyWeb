@@ -180,6 +180,9 @@ function view(pid) {
 				var startY = e.clientY;
 				var muchFile = document.createElement('p');
 				var howMuch = document.createElement('span');
+				if(self.className == 'liHover'&&li.liActive) {
+					return
+				}
 				howMuch.style.width = muchFile.style.height ='14px';
 				muchFile.style.width = muchFile.style.height ='32px';
 				muchFile.style.position = 'fixed';
@@ -299,35 +302,35 @@ fileDetailCols.addEventListener('click',function(e) {
 		fileDetail.style.display = 'none';
 });
 function openMedia(file,fileType) {
-		fileDetailsC.innerHTML = "";
-		var reader = new FileReader();
-		reader.onload = function(e){
-			fileDetail.style.display = "block";
-			var result = e.target.result;
-			if(fileType == 'text') {
-					var p = document.createElement("p");
-					p.innerHTML = result;
-					fileDetailsC.appendChild(p);
-			}
-			else if (fileType == 'image') {
-				var img = new Image();
-				img.src = result;
-				fileDetailsC.appendChild(img);
-			}
-			else if (fileType == 'video') {
-				var video = document.createElement('video');
-				video.setAttribute("loop","");
-				video.setAttribute("controls","");
-				video.src = result;
-				fileDetailsC.appendChild(video);
-			}
-			else if(fileType == "audio"){
-				var audio = document.createElement('audio');
-				audio.setAttribute("loop","");
-				audio.setAttribute("controls","");
-				audio.src = result;
-				fileDetailsC.appendChild(audio);
-			}
+	fileDetailsC.innerHTML = "";
+	var reader = new FileReader();
+	reader.onload = function(e){
+		fileDetail.style.display = "block";
+		var result = e.target.result;
+		if(fileType == 'text') {
+				var p = document.createElement("p");
+				p.innerHTML = result;
+				fileDetailsC.appendChild(p);
+		}
+		else if (fileType == 'image') {
+			var img = new Image();
+			img.src = result;
+			fileDetailsC.appendChild(img);
+		}
+		else if (fileType == 'video') {
+			var video = document.createElement('video');
+			video.setAttribute("loop","");
+			video.setAttribute("controls","");
+			video.src = result;
+			fileDetailsC.appendChild(video);
+		}
+		else if(fileType == "audio"){
+			var audio = document.createElement('audio');
+			audio.setAttribute("loop","");
+			audio.setAttribute("controls","");
+			audio.src = result;
+			fileDetailsC.appendChild(audio);
+		}
 	}
 	if(fileType == "text"){
 		reader.readAsText(file);
@@ -478,6 +481,48 @@ function showTree() {
 	viewTree();
 }
 
+//	框选部分
+function selectRound(e) {
+    var lis = list.getElementsByTagName('li');
+    list.onmousedown = function(e) {
+      if (e.button == 2) {
+        return;
+      }
+      var selectArea = document.createElement('div');
+      var startX = e.clientX;
+      var startY = e.clientY;
+      selectArea.className = 'selectArea';
+      selectArea.style.left = startX + 'px';
+      selectArea.style.top = startY + 'px';
+      list.appendChild(selectArea);
+      document.onmousemove = function(e) {
+        var nowX = e.clientX;
+        var nowY = e.clientY;
+        var disX = Math.abs(nowX - startX);
+        var disY = Math.abs(nowY - startY);
+        selectArea.style.width = Math.abs(nowX - startX) + 'px';
+        selectArea.style.height = Math.abs(nowY - startY) + 'px';
+        selectArea.style.left = Math.min(nowX, startX) + 'px';
+        selectArea.style.top = Math.min(nowY, startY) + 'px';
+        //	碰撞后框选
+        for (var i = 0; i < lis.length; i++) {
+          if (getCollide(selectArea, lis[i])) {
+            trash.className != 'active' && showFileBar();
+            canChose();
+            lis[i].classList.add('liActive');
+            lis[i].children[1].style.display = 'block';
+            chosenX[i].checked = true;
+          }
+        }
+      }
+      document.onmouseup = function(e) {
+        (selectArea.parentNode == list) && list.removeChild(selectArea);
+        var nub = list.querySelectorAll('.liActive').length;
+        hasChosen.innerHTML = nub;
+        choseAll.checked = nub == lis.length ? true : false;
+      }
+    };
+}
 //	深度克隆
 function extend(originObject) {
 	// 根据originObject的原始类型来对新对象进行对应的初始化，保证进来什么格式出去就是什么格式
