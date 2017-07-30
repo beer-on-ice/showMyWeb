@@ -1,0 +1,399 @@
+@charset "utf-8";
+
+
+.navHeadBg4 .chosenwatch {
+	color:#959595;
+}
+.navHeadBg4 {
+	background:#333;
+}
+.iwatchNav {
+	height:109px;
+	background:#fbfbfb;
+}
+.iwatchType {
+	width:833px;
+	margin:0 auto;
+}
+.iwatchType li {
+	float:left;
+	font:12px/1 "微软雅黑";
+	margin-top:23px;
+	text-align:center;
+}
+.iwatchType a {
+	color:#000;
+}
+.iwatchType a:hover {
+	color:#0070c9;
+}
+.iwatchType span {
+	display:block;
+}
+.iwatchType li .iwatchImg {
+	background:url(../img/sprite.gif) no-repeat;
+}
+.iwatchType .iwatchT1 {
+	width:80px;
+	margin-right:22px;
+}
+.iwatchType li .iwatchImg1 {
+	width:23px;
+	height:42px;
+	margin:0 0 8px 24px;
+	background-position:0 -975px;
+}
+.iwatchType .iwatchT2 {
+	width:80px;
+	margin-right:23px;
+}
+.iwatchType li .iwatchImg2 {
+	width:23px;
+	height:42px;
+	margin:0 0 8px 24px;
+	background-position: -40px -975px;
+}
+.iwatchType .iwatchT3 {
+	width:80px;
+	margin-right:23px;
+}
+.iwatchType li .iwatchImg3 {
+	width:35px;
+	height:42px;
+	margin:0 0 8px 19px;
+	background-position: -86px -975px;
+}
+.iwatchType .iwatchT4 {
+	width:80px;
+	margin-right:23px;
+}
+.iwatchType li .iwatchImg4 {
+	width:23px;
+	height:42px;
+	margin:0 0 8px 24px;
+	background-position: -147px -975px;
+}
+.iwatchType .iwatchT5 {
+	width:80px;
+	margin-right:34px;
+}
+.iwatchType li .iwatchImg5 {
+	width:23px;
+	height:42px;
+	margin:0 0 8px 24px;
+	background-position: 0 -975px;
+}
+.iwatchType .iwatchT6 {
+	width:52px;
+	margin-right:41px;
+}
+.iwatchType li .iwatchImg6 {
+	width:42px;
+	height:42px;
+	margin:0 0 8px 4px;
+	background-position: -193px -975px;
+}
+.iwatchType .iwatchT7 {
+	width:24px;
+	margin-right:40px;
+}
+.iwatchType li .iwatchImg7 {
+	width:15px;
+	height:42px;
+	margin:0 0 8px 3px;
+	background-position: -256px -975px;
+}
+.iwatchType .iwatchT8 {
+	width:50px;
+	margin-right:34px;
+}
+.iwatchType li .iwatchImg8 {
+	width:50px;
+	height:34px;
+	margin:8px 0 8px 0;
+	background-position: -290px -975px;
+}
+.iwatchType .iwatchT9 {
+	width:67px;
+}
+.iwatchType li .iwatchImg9 {
+	width:67px;
+	height:37px;
+	margin:5px 0 8px 0;
+	background-position: -362px -975px;
+}
+
+
+.iwatchS {
+	width:100%;
+	height:1116px;
+	font-family:Arial,"微软雅黑";
+	text-align:center;
+	color:#333;
+	position:relative;
+	background:url(../img/imgs/hero_activity_rings_large.jpg) no-repeat center top;
+}
+.iwatchS figure {
+	width:184px;
+	height:71px;
+	position:absolute;
+	top:71px;
+	left:583px;
+	background:url(../img/imgs/applewatchser.jpg) no-repeat;
+}
+.iwatchS a {
+	font-size:22px;
+	line-height:26px;
+	color:#0070c9;
+	display:inline-block;	
+	margin: 164px 12px 0;
+}
+.iwatchNike {
+	width:100%;
+	height:700px;
+	font-family:Arial,"微软雅黑";
+	text-align:center;
+	color:#333;
+	margin-top:50px;
+	position:relative;
+	background:url(../img/imgs/nike_alt_large.jpg) no-repeat center top;
+}
+.iwatchNike figure {
+	width:223px;
+	height:46px;
+	position:absolute;
+	top:66px;
+	left:563px;
+	background:url(../img/imgs/applewatchnike.jpg) no-repeat;
+}
+.iwatchNike a {
+	font-size:22px;
+	line-height:26px;
+	color:#0070c9;
+	display:inline-block;	
+	margin: 132px 12px 0;
+}
+
+
+.hermesEdi {
+	margin-top:50px;
+	height:900px;
+	text-align:center;
+}
+.hermesEdi .applewatchhermes {
+	width:653px;
+	height:900px;
+	background:url(../img/imgs/hermes_large.jpg) no-repeat;
+	float:left;
+	position:relative;
+}
+.hermesEdi .applewatchhermes figure {
+	width:276px;
+	height:46px;
+	background:url(../img/imgs/applewatchhermers.jpg) no-repeat;
+	position:absolute;
+	top:64px;
+	left:187px;
+}
+.hermesEdi .applewatchEdition {
+	width:653px;
+	height:900px;
+	background:url(../img/imgs/edition_large.jpg) no-repeat;
+	float:right;
+	position:relative;
+}
+.hermesEdi .applewatchEdition figure {
+	width:276px;
+	height:46px;
+	background:url(../img/imgs/applewatchedition.jpg) no-repeat;	
+	position:absolute;
+	top:64px;
+	left:213px;
+}
+.hermesEdi a {
+	font-size:22px;
+	line-height:26px;
+	color:#0070c9;
+	display:inline-block;	
+	margin: 128px 12px 0;
+}
+
+.iwatchSer1 {
+	width:100%;
+	height:700px;
+	font-family:Arial,"微软雅黑";
+	text-align:center;
+	color:#333;
+	margin-top:50px;
+	position:relative;
+	background:url(../img/imgs/series_one_large.jpg) no-repeat center top;
+}
+.iwatchSer1 figure {
+	width:223px;
+	height:46px;
+	position:absolute;
+	top:66px;
+	left:616px;
+	background:url(../img/imgs/appleser1.jpg) no-repeat;
+}
+.iwatchSer1 a {
+	font-size:22px;
+	line-height:26px;
+	color:#0070c9;
+	display:inline-block;	
+	margin: 132px 12px 0;
+}
+
+.iwatchCompare {
+	height:565px;
+	margin-top:50px;
+	text-align:center;
+	background:url(../img/imgs/compare_large.jpg) no-repeat center top;
+}
+.iwatchCompare h3 {
+	font-size:32px;
+	line-height:40px;
+	padding:66px 0 13px 0;
+}
+.iwatchCompare a {
+	font-size:22px;
+	line-height:32px;
+	color:#0070c9;
+	display:inline-block;	
+}
+
+
+.iwatchbuyer {
+	width:980px;
+	height:319px;
+	margin:0 auto;
+}
+.iwatchbuyer .goSale {
+	width:321px;
+	padding:91px 83px 0;
+	float:left;	
+}
+.iwatchbuyer .goSell {
+	width:159px;
+	padding:91px 167px 0;
+	float:right;	
+}
+.iwatchbuyer .goSale figure {
+	width:38px;
+	height:44px;
+	margin-left:143px;
+	background:url(../img/sprite.gif) no-repeat 0 -554px;
+}
+.iwatchbuyer .goSell figure {
+	width:40px;
+	height:44px;
+	margin-left:61px;
+	background:url(../img/sprite.gif) no-repeat 0 -597px;
+}
+.iwatchbuyer h3 {
+	font:16px/40px "微软雅黑";
+	text-align:center;
+}
+.iwatchbuyer p {
+	font:14px/18px "微软雅黑";
+	margin-top:2px;	
+	text-align:center;
+}
+.iwatchbuyer a {
+	display:block;
+	text-align:center;
+	font:14px/42px "微软雅黑";
+	color:#0070c9;
+}
+.applewatchImg {
+	height:700px;
+	background:url(../img/imgs/bands_large.jpg) no-repeat center top;
+}
+
+.applewatchTools {
+	text-align:center;
+}
+
+.applewatchTools h3 {
+	font-size:32px;
+	line-height:40px;
+	margin:34px 0 8px 0;
+}
+.applewatchTools a {
+	font-size:22px;
+	line-height:26px;
+	color:#0070c9;
+}
+.applewatchTools a:hover {
+	text-decoration:underline;
+}
+.applewatchTools .applewatchList div {
+	width:650px;
+	margin-top:79px;
+}
+.applewatchTools .applewatchPan {
+	float:left;
+	height:887px;
+}
+.applewatchTools .applewatchPan figure {
+	width:650px;
+	height:700px;
+	background:url(../img/imgs/gallery_large.jpg) no-repeat center top;
+}
+.applewatchTools .applewatchBuy {
+	float:right;
+	height:887px;
+}
+.applewatchTools .applewatchBuy figure {
+	width:650px;
+	height:700px;
+	background:url(../img/imgs/accessories_largerr.jpg) no-repeat center top;
+}
+.applewatchImg2 figure {
+	height:761px;
+	background:url(../img/imgs/films_active_rings_large.jpg) no-repeat center top;
+}
+.applewatchImg2 div {
+	text-align:center;
+}
+.applewatchImg2 h3 {
+	font-size:32px;
+	line-height:40px;
+	margin:34px 0 8px 0;
+}
+.applewatchImg2 a {
+	font-size:22px;
+	line-height:26px;
+	color:#0070c9;
+}
+.buyRule {
+	font:12px/21px "微软雅黑";
+	color:#888;
+	width:980px;
+	height:42px;
+	margin:90px auto 0;
+	padding:17px 0 11px 0;
+	border-bottom:1px solid #d6d6d6;
+}
+.appleClassify {
+	width:980px;
+	height:38px;
+	background:url(../img/arrowR.jpg) no-repeat 26px 21px;
+	margin:0 auto;
+}
+.appleClassify figure {
+	width:13px;
+	height:38px;
+	float:left;
+	background:url(../img/sprite.gif) no-repeat 0 -641px;
+}
+.appleClassify figure a {
+	width:13px;
+	height:38px;
+	float:left;
+}
+.appleClassify span {
+	padding: 24px 0 0 31px;
+	float:left;
+	font:12px/1 "微软雅黑";
+}

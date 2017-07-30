@@ -1,0 +1,490 @@
+@charset "utf-8";
+.positionBg {
+	background:#f2f2f2;
+}
+.navHead .chosenMusic {
+	color:#959595;
+}
+.watchHead {
+	height:835px;
+	background:url(../img/imgs/family_hero_medium.jpg) no-repeat;
+	background-size: cover;
+    background-position: 50% 50%;
+    position:relative;
+}
+.navHead {
+	background:rgba(0,0,0,0.8);
+}
+.iMusicNav {
+	height:109px;
+	background:rgba(0,0,0,0.8);
+}
+.iMusicType {
+	width:478px;
+	margin:0 auto;
+	text-align:center;
+}
+.iMusicType li {
+	float:left;
+	font:12px/1 "微软雅黑";
+	margin-top:30px;
+}
+.iMusicType a {
+	color:#fff;
+}
+.iMusicType a:hover {
+	color:#66abc4;
+}
+.iMusicType span {
+	display:block;
+}
+.iMusicType li .iMusicImg {
+	background:url(../img/sprite.gif) no-repeat;
+}
+.iMusicType .iMusicT1 {
+	width:74px;
+	margin-right:40px;
+}
+.iMusicType li .iMusicImg1 {
+	width:28px;
+	height:28px;
+	margin:6px 0 11px 21px;
+	background-position:0 -1017px;
+}
+.iMusicType .iMusicT2 {
+	width:38px;
+	margin-right:58px;
+}
+.iMusicType li .iMusicImg2 {
+	width:31px;
+	height:31px;
+	margin:5px 0 9px 3px;
+	background-position: -46px -1017px;
+}
+.iMusicType .iMusicT3 {
+	width:26px;
+	margin-right:44px;
+}
+.iMusicType li .iMusicImg3 {
+	width:24px;
+	height:35px;
+	margin:0 0 10px 2px;
+	background-position: -98px -1017px;
+}
+.iMusicType .iMusicT4 {
+	width:67px;
+	margin-right:30px;
+}
+.iMusicType li .iMusicImg4 {
+	width:33px;
+	height:31px;
+	margin:4px 0 10px 11px;
+	background-position: -150px -1017px;
+}
+.iMusicType .iMusicT5 {
+	width:100px;
+}
+.iMusicType li .iMusicImg5 {
+	width:33px;
+	height:24px;
+	margin:11px 0 10px 30px;
+	background-position: -207px -1017px;
+}
+.MusicHappy div {
+	margin:146px 0 0 185px;
+}
+.MusicHappy figure {
+	width:175px;
+	height:42px;
+	background:url(../img/imgs/apple_music_logo_large.png);
+}
+.MusicHappy h2 {
+	font:46px/56px "微软雅黑";
+	margin:11px 0 25px 0;
+	color:#fff;
+}
+.MusicHappy p {
+	width:172px;
+	height:33px;
+	font:14px/32px "微软雅黑";
+	background:#ff365d;
+	border-radius:4px;
+	text-align:center;
+}
+.MusicHappy a {
+	color:#fff;
+}
+.MusicHappy .aMore {
+	font:12px/26px "微软雅黑";
+	display:block;
+	margin-top:12px;
+}
+.MusicHappy .aMore:hover {
+	text-decoration:underline;
+}
+
+.musicRec {
+	width:1160px;
+	height:1629px;
+	background-color: #fff;
+	position:absolute;
+	top:667px;
+	left:95px;
+}
+.musicRec .musicRecP div {
+	width:490px;
+	height:709px;
+	float:left;
+}
+.musicRec .musicRecP img {
+	width:475px;
+	height:475px;
+	border:1px solid #eaeaea;
+}
+.musicRec .musicRecP .imgS {
+	width:477px;
+	padding-left:13px;
+}
+.musicRec .musicRecP {
+	padding: 64px 90px 0 90px;
+}
+.musicRec h2 {
+	font:40px/46px "微软雅黑";
+	height:47px;
+	margin-bottom:60px;
+}
+.musicRec h3 {
+	font:32px/38px "微软雅黑";
+	margin-top:39px;
+}
+.musicRec span {
+	font:18px/32px "微软雅黑";
+	display:block;
+	margin-bottom:8px;
+}
+.musicRec a {
+	font:12px/20px "微软雅黑";
+	display:block;
+	color:#888;
+	margin-top:14px;
+	background:url(../img/freearrow.gif) no-repeat 140px 7px;
+}
+.musicRec a:hover {
+	text-decoration:underline;
+}
+
+.blackAirpods {
+	height:975px;
+	margin-top:1629px;
+	background:#f5fdf1;
+	position:relative;
+}
+.blackAirpods div {
+	width:327px;
+	position:absolute;
+	top:390px;
+	left:189px;
+}
+.blackAirpods h2 {
+	font:40px/46px "微软雅黑";
+	padding-bottom:20px;
+}
+.blackAirpods span {
+	display:block;
+	font:22px/1 "微软雅黑";
+	padding-bottom:24px;
+}
+.blackAirpods a {
+	font:16px/26px "微软雅黑";
+	color:#333;
+}
+.blackAirpods a:hover {
+	text-decoration:underline;
+}
+.blackAirpods figure {
+	width:588px;
+	height:940px;
+	background:url(../img/imgs/airpods_large.png) no-repeat;
+	position:relative;
+	top:52px;
+	left:590px;
+}
+.loveIpod {
+	height:961px;
+	background:#fff1de;
+	position:relative;
+}
+.loveIpod div {
+	width:327px;
+	position:absolute;
+	top:390px;
+	left:189px;
+}
+.loveIpod h2 {
+	font:40px/46px "微软雅黑";
+	padding-bottom:20px;
+}
+.loveIpod span {
+	display:block;
+	font:22px/1 "微软雅黑";
+	padding-bottom:24px;
+}
+.loveIpod a {
+	font:16px/26px "微软雅黑";
+	color:#333;
+}
+.loveIpod a:hover {
+	text-decoration:underline;
+}
+.loveIpod figure {
+	width:730px;
+	height:741px;
+	background:url(../img/imgs/ipod_large.png) no-repeat;
+	position:relative;
+	top:156px;
+	left:511px;
+}
+.beats {
+	height:972px;
+	background:#e9f7f8;
+	position:relative;
+}
+.beats div {
+	width:327px;
+	position:absolute;
+	top:390px;
+	left:189px;
+}
+.beats h2 {
+	font:40px/46px "微软雅黑";
+	padding-bottom:20px;
+}
+.beats span {
+	display:block;
+	font:22px/1 "微软雅黑";
+	padding-bottom:24px;
+}
+.beats a {
+	font:16px/26px "微软雅黑";
+	color:#333;
+}
+.beats a:hover {
+	text-decoration:underline;
+}
+.beats figure {
+	width:718px;
+	height:773px;
+	background:url(../img/imgs/accessories_mediumv.png) no-repeat;
+	position:relative;
+	top:123px;
+	left:511px;
+}
+
+.selfItunes {
+	height:976px;
+	background:#fce7e3;
+	position:relative;
+}
+.selfItunes div {
+	width:327px;
+	position:absolute;
+	top:390px;
+	left:189px;
+}
+.selfItunes h2 {
+	font:40px/46px "微软雅黑";
+	padding-bottom:20px;
+}
+.selfItunes span {
+	display:block;
+	font:22px/1 "微软雅黑";
+	padding-bottom:24px;
+}
+.selfItunes a {
+	font:16px/26px "微软雅黑";
+	color:#333;
+}
+.selfItunes a:hover {
+	text-decoration:underline;
+}
+.selfItunes figure {
+	width:1227px;
+	height:750px;
+	background:url(../img/imgs/itunes_large.png) no-repeat;
+	position:relative;
+	top:154px;
+	left:371px;
+}
+
+
+.appleMoney {
+	height:523px;
+	background:#fceffc;
+	position:relative;
+}
+.appleMoney div {
+	width:572px;
+	position:absolute;
+	top:209px;
+	left:189px;
+}
+.appleMoney h2 {
+	font:40px/46px "微软雅黑";
+	padding-bottom:20px;
+}
+.appleMoney span {
+	display:block;
+	font:22px/1 "微软雅黑";
+	padding-bottom:24px;
+}
+.appleMoney a {
+	font:16px/26px "微软雅黑";
+	color:#333;
+}
+.appleMoney a:hover {
+	text-decoration:underline;
+}
+.appleMoney figure {
+	width:507px;
+	height:438px;
+	background:url(../img/imgs/gift_cards_large.png) no-repeat;
+	position:relative;
+	top:58px;
+	left:706px;
+}
+
+
+.itunesApp {
+	height:1036px;
+	padding:132px 0;
+	text-align:left;
+}
+.itunesApp .makeApp {
+	margin-bottom:115px;
+}
+.itunesApp .makeApp h2 {
+	font-size:40px;
+	line-height:46px;
+	text-align:center;
+}
+.itunesApp .makeApp figure {
+	width:942px;
+	height:494px;
+	background:url(../img/imgs/apps_medium.jpg) no-repeat;
+	margin:62px 0 0 210px;
+}
+.itunesApp .itunesStyle {
+	width:980px;
+	margin-left:185px;
+}
+.itunesApp .itunesStyle div {
+	float:left;
+	width:245px;
+}
+.itunesApp .itunesStyle h3 {
+	font:24px/29px "微软雅黑";
+	color:#333;
+	margin-top:23px;
+}
+.itunesApp .itunesStyle p {
+	margin:11px 0 12px 0;
+	font:16px/26px "微软雅黑";
+	width:205px;
+	color:#333;	
+}
+.itunesApp .itunesStyle span {
+	display:block;
+	font:16px/26px "微软雅黑";
+}
+.itunesApp .itunesStyle a {
+	color:#333;	
+}
+.itunesApp .itunesStyle .itunesimg_1 {
+	width:70px;
+	height:85px;
+	background:url(../img/imgs/icon_apps_music_memos_large.png) no-repeat;
+}
+.itunesApp .itunesStyle .itunesimg_2 {
+	width:65px;
+	height:85px;
+	background:url(../img/imgs/icon_apps_garage_band_large.png) no-repeat;
+}
+.itunesApp .itunesStyle .itunesimg_3 {
+	width:67px;
+	height:77px;
+	margin-top:8px;
+	background:url(../img/imgs/icon_apps_logic_pro_large.png) no-repeat;
+}
+.itunesApp .itunesStyle .itunesimg_4 {
+	width:65px;
+	height:80px;
+	margin-top:5px;
+	background:url(../img/imgs/icon_apps_main_stage_large.png) no-repeat;
+}
+.comeOn {
+	width:980px;
+	height:275px;
+	margin:0 auto;
+	padding:132px 0 0 0;
+	border-top:1px solid #d6d6d6;
+}
+.comeOn .comeOnImg {
+	float:left;
+	width:245px;
+	margin-left:82px;
+}
+.comeOn .comeOnImg figure {
+	width:71px;
+	height:71px;
+	background:url(../img/imgs/itunes_icon_large.png);
+	margin:0 32px 0 142px;
+}
+.comeOn .gowithMusic {
+	float:left;
+	width:490px;
+}
+.comeOn .gowithMusic h3 {
+	font:32px/40px "微软雅黑";
+}
+.comeOn .gowithMusic p {
+	width:450px;
+	font:16px/26px "微软雅黑";
+	margin-top:12px;
+}
+.comeOn .gowithMusic a {
+	font:16px/26px "微软雅黑";
+	display:block;
+	margin-top:12px;
+	color:#333;
+}
+.buyRule {
+	font:12px/21px "微软雅黑";
+	color:#888;
+	width:980px;
+	height:42px;
+	margin:90px auto 0;
+	padding:17px 0 11px 0;
+	border-bottom:1px solid #d6d6d6;
+}
+.appleClassify {
+	width:980px;
+	height:38px;
+	background:url(../img/arrowR.jpg) no-repeat 26px 21px;
+	margin:0 auto;
+}
+.appleClassify figure {
+	width:13px;
+	height:38px;
+	float:left;
+	background:url(../img/sprite.gif) no-repeat 0 -641px;
+}
+.appleClassify figure a {
+	width:13px;
+	height:38px;
+	float:left;
+}
+.appleClassify span {
+	padding: 24px 0 0 31px;
+	float:left;
+	font:12px/1 "微软雅黑";
+}

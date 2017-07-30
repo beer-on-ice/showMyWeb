@@ -1,0 +1,505 @@
+@charset "utf-8";
+
+
+.navHead .choseniPad {
+	color:#959595;
+}
+.navHeadBg2 {
+	background:#333;
+}
+.iPadNav {
+	height:109px;
+	background:#f6f6f6;
+}
+.iPadType {
+	width:461px;
+	margin:0 auto;
+}
+.iPadType li {
+	float:left;
+	font:12px/1 "微软雅黑";
+	height:63px;
+	margin-top:15px;
+}
+.iPadType a {
+	color:#000;
+}
+.iPadType a:hover {
+	color:#0070c9;
+}
+.iPadType span {
+	display:block;
+}
+.iPadType li .iPadImg {
+	background:url(../img/sprite.gif) no-repeat;
+}
+.iPadType .iPadT1 {
+	width:50px;
+	margin-right:37px;
+}
+.iPadType li .iPadImg1 {
+	width:40px;
+	height:48px;
+	margin:2px 0 10px 3px;
+	background-position:0 -679px;
+}
+.iPadType .iPadT2 {
+	width:28px;
+	margin-right:42px;
+}
+.iPadType .iPadT2 strong {
+	color:#e85d00;
+	display:block;
+	padding-top:5px;
+}
+.iPadType li .iPadImg2 {
+	width:28px;
+	height:40px;
+	margin:10px 0 10px 0;
+	background-position: 0 -727px;
+}
+.iPadType .iPadT3 {
+	width:62px;
+	margin-right:41px;
+}
+.iPadType li .iPadImg3 {
+	width:62px;
+	height:31px;
+	margin:19px 0 10px 19px;
+	background-position: 0 -767px;
+}
+.iPadType .iPadT4 {
+	width:37px;
+	margin-right:40px;
+}
+.iPadType li .iPadImg4 {
+	width:32px;
+	height:32px;
+	margin:18px 0 10px 2px;
+	background-position: 0 -798px;
+}
+.iPadType .iPadT5 {
+	width:33px;
+	margin-right:41px;
+}
+.iPadType li .iPadImg5 {
+	width:33px;
+	height:52px;
+	margin:0 0 8px 0;
+	background-position: 0 -830px;
+}
+.iPadType .iPadT6 {
+	width:50px;
+}
+.iPadType li .iPadImg6 {
+	width:47px;
+	height:48px;
+	margin:2px 0 10px 0;
+	background-position: 0 -882px;
+}
+
+
+.iPadPro {
+	width:100%;
+	height:1003px;
+	font-family:Arial,"微软雅黑";
+	text-align:center;
+	color:#333;
+	background:#fafafa url(../img/imgs/ipadpro_large.jpg) no-repeat center 162px;
+}
+.iPadPro .iPad-introduceS {
+	width:735px;
+	margin:0 auto;
+}
+.iPadPro .iPadProName {
+	font-size:56px;
+	padding-top:86px;
+}
+.iPadPro .iPadProAdvantageS {
+	font-size:40px;
+}
+.iPadPro .learnBuyiPadPro {
+	width:100%;
+	margin-top:16px;
+}
+.iPadPro a {
+	font-size:22px;
+	line-height:32px;
+	color:#0070c9;
+	margin:0 11px;
+	display:inline-block;
+}
+.iPadPro a:hover {
+	text-decoration:underline;
+}
+
+
+.pencilKey {
+	margin-top:30px;
+}
+.pencilKey .applePencil {
+	width:660px;
+	padding-top:80px;
+	float:left;
+	background:#fafafa;
+}
+.pencilKey .appleKeyboard {
+	width:659px;
+	padding-top:80px;
+	float:right;
+	background:#fafafa;
+}
+.pencilKey .applePencil h2 {
+	font:40px/46px "微软雅黑";	
+	width:280px;
+	margin:0 auto;
+	text-align:center;
+}
+.pencilKey .appleKeyboard h2 {
+	font:40px/46px "微软雅黑";	
+	width:659px;
+	margin:0 auto;
+	text-align:center;
+}
+.pencilKey p {
+	font:22px "微软雅黑";
+	width:244px;
+	margin:0 auto;
+}
+.pencilKey .applePencil a {
+	display:inline-block;
+	margin:18px 10px 133px;
+}
+.pencilKey .appleKeyboard a {
+	display:inline-block;
+	margin:18px 10px 6px;
+}
+
+
+.iPad-introduce {
+	width:100%;
+	height:950px;
+	font-family:Arial,"微软雅黑";
+	text-align:center;
+	color:#333;
+	background:#fafafa;
+	margin-top:12px;
+}
+.iPad-introduce .iPad-introduceS {
+	width:735px;
+	margin:0 auto;
+}
+.iPad-introduce .iPadName {
+	margin-top:80px;
+	font-size:56px;
+}
+.iPad-introduce .iPadAdvantageS {
+	font-size:40px;
+}
+.iPad-introduce .learnBuyiPad {
+	width:100%;
+	margin-top:16px;
+}
+.iPad-introduce a {
+	font-size:22px;
+	line-height:32px;
+	color:#0070c9;
+	margin:0 11px 5px;
+	display:inline-block;
+}
+.iPad-introduce a:hover {
+	text-decoration:underline;
+}
+.iPad-introduce .iPadPhoto {
+	width:1267px;
+	height:775px;
+	background:url(../img/imgs/ipad_large.jpg) no-repeat left top;
+}
+
+
+
+.appSwift {
+	margin-top:30px;	
+}
+.appSwift .appleApp {
+	width:660px;
+	height:595px;
+	float:left;
+	background:#fafafa url(../img/imgs/ipad_playgrounds_small.png) no-repeat 0 bottom;
+}
+.appSwift .appleSwift {
+	width:659px;
+	height:595px;
+	float:right;
+	background:#fafafa url(../img/imgs/ipad_playgrounds_large.png) no-repeat 0 bottom;
+}
+.appSwift figure {
+	width:66px;
+	height:66px;
+	margin:56px auto 0;
+}
+.appSwift .appleApp h2 {
+	font:40px/46px "微软雅黑";
+	width:360px;
+	text-align:center;
+	margin:30px auto 20px;
+}
+.appSwift .appleSwift h2 {
+	font:40px/46px "微软雅黑";
+	text-align:center;
+	margin:30px auto 20px;
+}
+.appSwift .appleApp p {
+	width:28em;
+	font:16px/26px "微软雅黑";
+	text-align:center;
+	margin:0 auto;
+}
+.appSwift .appleSwift p {
+	font:16px/26px "微软雅黑";
+	width:14em;
+	text-align:center;
+	margin:0 auto;
+} 
+.appSwift .appleApp a {
+	font:16px/26px "微软雅黑";
+	color: #0070c9;
+	display:block;
+	text-align:center;
+	margin-top: 11px;
+}
+.appSwift .appleSwift a {
+	font:16px/26px "微软雅黑";
+	color: #0070c9;
+	display:block;
+	text-align:center;
+	margin-top: 11px;
+}
+
+
+.appleIos10 {
+	margin:30px 0 7px 0;
+	height:403px;	
+	background:#fafafa;
+	overflow:hidden;
+}
+.appleIos10 .appleIos10AD figure {
+	width:85px;
+	height:85px;
+	margin:90px auto 0;
+}
+.appleIos10 .appleIos10AD h2 {
+	font-size:40px;
+	text-align: center;
+    margin: 34px 0 10px 0;
+    color:#333;
+}
+.appleIos10 .appleIos10AD2 p {
+	width:572px;
+	margin:0 auto;
+	font:16px/26px "微软雅黑";
+	text-align: center;
+}
+.appleIos10 .appleIos10AD2 a {
+	color:#0070c9;
+	margin-top:12px;
+	display:block;
+}
+.appleIos10 .appleIos10AD2 a:hover {
+	text-decoration:underline;
+}
+
+
+.iPadCompare {
+	width:100%;
+	height:586px;
+	overflow:hidden;
+	background:#fafafa url(../img/imgs/compare_large.png) no-repeat center 58px;
+}
+.iPadCompare div {
+	width:336px;
+	margin:94px 0 0 238px;
+}
+.iPadCompare h2 {
+	width:336px;
+	font:40px "微软雅黑";
+}
+.iPadCompare a {
+	font:16px/26px "微软雅黑";
+	float:left;
+	margin-left:58px;
+}
+
+.iPadbuyer {
+	width:980px;
+	height:344px;
+	margin:0 auto;
+}
+.iPadbuyer .goSale {
+	width:321px;
+	padding:91px 83px 0;
+	float:left;	
+}
+.iPadbuyer .goSell {
+	width:159px;
+	padding:91px 167px 0;
+	float:right;	
+}
+.iPadbuyer .goSale figure {
+	width:38px;
+	height:44px;
+	margin-left:143px;
+	background:url(../img/sprite.gif) no-repeat 0 -554px;
+}
+.iPadbuyer .goSell figure {
+	width:40px;
+	height:44px;
+	margin-left:61px;
+	background:url(../img/sprite.gif) no-repeat 0 -597px;
+}
+.iPadbuyer h3 {
+	font:16px/40px "微软雅黑";
+	text-align:center;
+}
+.iPadbuyer p {
+	font:14px/18px "微软雅黑";
+	margin-top:2px;	
+	text-align:center;
+}
+.iPadbuyer a {
+	display:block;
+	text-align:center;
+	font:14px/42px "微软雅黑";
+	color:#0070c9;
+}
+
+
+.iPadUser .iPadTools {
+	width:100%;
+	height:700px;
+	text-align:center;
+	overflow:hidden;
+	background:url(../img/imgs/accessories_large.jpg) no-repeat;
+}
+.iPadUser .iPadTools h3 {
+	font:40px/46px "微软雅黑";
+	margin-top:286px;
+}
+.iPadUser .iPadTools p {
+	font:16px/26px "微软雅黑";
+	margin-top:7px;
+}
+.iPadUser .iPadTools a {
+	font:16px/26px "微软雅黑";
+	margin-top:12px;
+}
+.iPadUser .iPadEduUse {
+	width:100%;
+	height:600px;
+	text-align:center;
+	overflow:hidden;
+	margin-top:7px;
+	background:url(../img/imgs/education_large.jpg) no-repeat;
+}
+.iPadUser .iPadEduUse h3 {
+	font:40px/46px "微软雅黑";
+	color:#fff;
+	margin-top:224px;
+}
+.iPadUser .iPadEduUse p {
+	font:16px/26px "微软雅黑";
+	color:#fff;	
+	margin-top:14px;
+}
+.iPadUser .iPadEduUse span {
+	display:block;
+	width:213px;
+	margin:12px auto 0;
+}
+.iPadUser .iPadEduUse a {
+	font:16px/26px "微软雅黑";
+	color:#fff;	
+}
+.iPadUser .iPadBusUse {
+	width:100%;
+	height:600px;
+	text-align:center;
+	margin-top:7px;
+	overflow:hidden;
+	background:url(../img/imgs/business_large.jpg) no-repeat;
+}
+.iPadUser .iPadBusUse h3 {
+	font:40px/46px "微软雅黑";
+	color:#fff;
+	margin-top:224px;
+}
+.iPadUser .iPadBusUse p {
+	font:16px/26px "微软雅黑";
+	color:#fff;	
+	margin-top:14px;
+}
+.iPadUser .iPadBusUse span {
+	display:block;
+	width:213px;
+	margin:12px auto 0;
+}
+.iPadUser .iPadBusUse a {
+	font:16px/26px "微软雅黑";
+	color:#fff;	
+}
+.iPadUser .iPadFressClass {
+	width:100%;
+	height:600px;
+	text-align:center;
+	overflow:hidden;
+	margin-top:7px;
+	background:url(../img/imgs/workshop_large.jpg) no-repeat;
+}
+.iPadUser .iPadFressClass h3 {
+	font:40px/46px "微软雅黑";
+	color:#fff;
+	margin-top:224px;
+}
+.iPadUser .iPadFressClass p {
+	width:480px;
+	font:16px/26px "微软雅黑";
+	color:#fff;	
+	margin:14px auto 0;
+}
+.iPadUser .iPadFressClass a {
+	font:16px/26px "微软雅黑";
+	color:#fff;	
+	display:block;
+	margin-top:12px;
+}
+.appNumber {
+	font:12px/48px "微软雅黑";
+	color:#888;
+	width:980px;
+	height:48px;
+	padding-top:1px;
+	margin:0 auto;
+	border-bottom:1px solid #d6d6d6;
+}
+.appleClassify {
+	width:980px;
+	height:38px;
+	background:url(../img/arrowR.jpg) no-repeat 26px 21px;
+	margin:0 auto;
+}
+.appleClassify figure {
+	width:13px;
+	height:38px;
+	float:left;
+	background:url(../img/sprite.gif) no-repeat 0 -641px;
+}
+.appleClassify figure a {
+	width:13px;
+	height:38px;
+	float:left;
+}
+.appleClassify span {
+	padding: 24px 0 0 31px;
+	float:left;
+	font:12px/1 "微软雅黑";
+}

@@ -1,0 +1,172 @@
+@charset "utf-8";
+
+body,
+p,
+dl,
+dd,
+h2,
+h3,
+h4,
+figure {
+	margin:0;
+}
+button {
+	padding:0;
+	border:none;
+}
+a {
+	text-decoration:none;
+}
+ul {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+img {
+	vertical-align:top;
+	border:none;
+}
+strong,
+h2,
+h3,
+h4 {
+	font-weight:normal;
+	font-style:normal;
+}
+.clearFix {
+	zoom:1;
+}
+.clearFix:after {
+	content:"";
+	display:block;
+	clear:both;
+}
+body {
+	min-width:1349px;
+}
+/*头部导航*/
+.navHead  {
+	height:44px;
+}
+.navHead nav {
+	width:1067px;
+	margin:0 auto;
+	font:12px/44px Arial,"微软雅黑";
+}
+.navHead a {
+	float:left;
+	color:#fff;
+	height:44px;
+	margin:0 44px 0 45px;
+}
+.navHead .NavApple {
+	display:block;
+	width:16px;
+	height:44px;
+	background:url(../img/sprite.gif) no-repeat;
+}
+.navHead .NavSearch {
+	display:block;
+	width:15px;
+	height:44px;
+	background:url(../img/sprite.gif) no-repeat 0 -44px;
+}
+.navHead .NavBuy {
+	display:block;
+	width:14px;
+	height:44px;
+	background:url(../img/sprite.gif) no-repeat 0 -88px;
+}
+.navHead a:hover {
+	color:#959595;
+}
+
+
+
+
+/*底部*/
+.classify {
+	width:980px;
+	margin:0 auto;
+}
+.classify dl {
+	float:left;
+	width:196px;
+	margin-top:17px;
+}
+.classify dt {
+	font:12px/20px "微软雅黑";
+	color:#000;	
+}
+.classify dd {
+	font:12px/20px "微软雅黑";
+}
+.classify dd a {
+	color:#555;
+}
+.classify .dtBorder {
+	margin-top:19px;
+}
+.classify dd a:hover {
+	color:#000;
+	text-decoration:underline;
+}
+.getMore {
+	font:12px/30px "微软雅黑";
+	color:#8888a2;
+	width:980px;
+	margin:25px auto 0;
+	border-bottom:1px solid #d6d6d6;
+}
+.getMore a {
+	color:#0070cf;
+}
+.getMore a:hover {
+	text-decoration:underline;
+}
+/*法律信息*/
+.foot .footUp {
+	font:12px/30px "微软雅黑";
+	width:980px;
+	margin:0 auto;
+}
+.foot .coRight {
+	color:#8888a2;
+	width:253px;
+	float:left;
+}
+.foot .rule {
+	width:500px;
+	float:left;
+}
+.foot .rule a {
+	color:#555;
+	margin:0 11px;
+}
+.foot .rule a:hover {
+	text-decoration:underline;
+}
+.foot .rule span {
+	font:16px/30px "微软雅黑";
+	color:#d6d6d6;
+}
+.foot .language {
+	color:#555;
+	width:43px;
+	height:22px;
+	text-align:right;
+	float:right;
+	background:url(../img/sprite.gif) no-repeat 0 -260px;
+}
+.police {
+	font:12px/18px "微软雅黑";
+	color:#999;
+	float:left;
+}
+.bottomBg {
+	background:#f2f2f2;
+}
+
+
+
+

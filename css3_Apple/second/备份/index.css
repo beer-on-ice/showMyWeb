@@ -1,0 +1,109 @@
+@charset "utf-8";
+
+
+/*iPhone7推广*/
+.navHead {
+	background:#290a0d;
+}
+.iPhone7Ad {
+	height:542px;
+	background:#cc3341;
+}
+.iPhone7Ad ul {
+	width:100%;
+	margin:0 auto;
+}
+.iPhone7Ad li {
+	float:left;
+}
+.iPhone7Ad .iPhone7Img img {
+	width:100%;
+	height:542px;
+}
+.iPhone7Ad .iPhone7L {
+	position:relative;
+	width:250px;
+	height:542px;
+}
+.iPhone7Ad .iPhone7R {
+	position:relative;
+	width:251px;
+	height:542px;
+}
+.round {
+	width:64px;
+	height:64px;
+	border-radius:32px;
+	background:#c94753;
+	position:absolute;
+	top:217px;
+	left:18px;
+	display:none;
+}
+.round2 {
+	width:64px;
+	height:64px;
+	border-radius:32px;
+	background:#c94753;
+	position:absolute;
+	top:217px;
+	right:18px;
+	display:none;
+}
+.box {
+	width:24px;
+	height:31px;
+	border:1px solid #95303a;
+	margin:17px 0 0 18px;
+}	
+.iPhone7Ad .iPhone7L:hover div {
+	display:inline-block;
+}
+.iPhone7Ad .iPhone7R:hover div {
+	display:inline-block;
+}
+.iPhone7L .round:hover {
+	transition:0.5s;
+	background:#c53a47;
+}
+.iPhone7R .round2:hover {
+	transition:0.5s;
+	background:#c53a47;
+}
+.iPhone7Ad div:hover .box {
+	transition:0.5s;
+	border-color:#661d23;
+}
+
+/*服务部分*/
+.service {
+	width:1349px;
+	margin:0 auto;
+}
+.service li {
+	float:left;
+	margin:2px 2px 2px 0;
+}
+.service a {
+	float:left;
+	width:335px;
+	height:198px;
+}
+.service .renew {
+	width:336px;
+}
+.service .supplier {
+	width:337px;
+	margin-right:0;
+}
+
+/*底部信息部分*/
+.jetRed {
+	font:12px/48px "微软雅黑";
+	color:#888;
+	width:980px;
+	height:48px;
+	padding-top:1px;
+	margin:0 auto;
+	border-bottom:1px solid #d6d6d6;
+}
