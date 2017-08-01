@@ -186,7 +186,7 @@ function getStickArr(info) {
   });
   view(_ID)
 }
-//  深拷贝对象 ？？？？？？？？？？
+//  深拷贝对象 
 function deepCopy(p, c) {
     var c = c || {};
     for (var i in p) {

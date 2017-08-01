@@ -8,8 +8,8 @@ function showContextMenu(container,dataList) {
 		li.onmouseover = function(e) {
 			var lis = this.parentNode.children;
 			for (var i=0; i<lis.length; i++) {
-					lis[i].className = '';
-      }
+				lis[i].className = '';
+      		}
 			this.className = 'menuActive';
 			if(!li.children.length) {
 				var uls = this.parentNode.querySelectorAll('ul');
@@ -21,7 +21,7 @@ function showContextMenu(container,dataList) {
             this.appendChild(ul);
             ul.style.display = 'block';
             ul.className = 'subMenu';
-						resetUlOffset(ul);
+			resetUlOffset(ul);
             showContextMenu(ul, item.children);
         }
 			}
@@ -165,6 +165,15 @@ function view(pid) {
 			//	拖拽
 			li.onmousedown =function(e) {
 				e.stopPropagation();
+				if(!this.children[1].children[0].checked) {
+					var lis = list.querySelectorAll('li')
+					console.log(lis);
+					for(var i=0;i<lis.length;i++) {
+						lis[i].children[1].children[0].checked = false;
+						lis[i].children[1].style.display = 'none';
+						lis[i].className = '';
+					}
+				}
 				if(e.button == 0){
 				var otherFiles = list.querySelectorAll('li:not(.liActive)');// 非选中的文件
 				var newNode = null;	//	克隆出来的新节点
@@ -204,7 +213,7 @@ function view(pid) {
 				};
 				document.onmouseup = function(e) {
 					document.onmousemove = null;
-					notChoseAll()
+					notChoseAll();
 					if(!newNode){
 						return;
 					}
