@@ -137,34 +137,41 @@ document.addEventListener('contextmenu', function(e) {
     //	右键的那个文件夹选中
     var lis = list.children;
     for (var i = 0; i < lis.length; i++) {
-      lis[i].classList.remove('liActive');
-      if(lis.length == 0) {
-        choseAll.checked = true;
-      } else {
-        choseAll.checked = false;
-      }
-      lis[i].children[1].children[0].checked = true;
-      lis[i].children[1].style.display = 'none';
+        lis[i].classList.remove('liActive');
+        lis[i].children[1].children[0].checked = false;
+        lis[i].children[1].style.display = 'none';
     }
+    if(lis.length == 0) {
+        choseAll.checked = true;
+    }
+    else if(lis.length == 1) {
+        choseAll.checked = true;
+    }
+    else {
+        choseAll.checked = false;
+  }
     if (e.target.tagName.toUpperCase() == 'LI') {
+      e.target.children[1].children[0].checked = true;
       e.target.classList.add('liActive');
       e.target.children[1].checked = true;
       selectedLi = rightLi = e.target;
     } else if (e.target.parentNode.tagName.toUpperCase() == 'LI') {
+        e.target.parentNode.children[1].children[0].checked = true;
       e.target.parentNode.classList.add('liActive');
       e.target.parentNode.children[1].checked = true;
       selectedLi = rightLi = e.target.parentNode;
     } else if (e.target.parentNode.parentNode.tagName.toUpperCase() == 'LI') {
+        e.target.parentNode.parentNode.children[1].children[0].checked = true;
       e.target.parentNode.parentNode.classList.add('liActive');
       e.target.parentNode.parentNode.children[1].checked =
       selectedLi = rightLi = e.target.parentNode.parentNode;
     }
     //	只有一个文件夹时右键后，全选按钮打勾
-    if (!rightLi.previousElementSibling && !rightLi.nextElementSibling) {
-      choseAll.checked = true;
-    } else {
-      rightLi.children[1].children[0].checked = true;
-    }
+    // if (!rightLi.previousElementSibling && !rightLi.nextElementSibling) {
+    //   choseAll.checked = true;
+    // } else {
+    //   rightLi.children[1].children[0].checked = true;
+    // }
     trash.className != 'active' && showFileBar();
     rightLi.children[1].style.display = 'block';
     hasChosen.innerHTML = 1;
@@ -418,6 +425,7 @@ var contextmenuCallback = {
     }
   },
   deleteFile: function() {
+    var lis = list.querySelectorAll('li')
     for (var i = 0; i < lis.length; i++) {
       if (lis[i].className == 'liActive') {
         lis[i].item.reId = lis[i].item.pid;
@@ -698,6 +706,7 @@ fileDelete.onclick = contextmenuCallback.deleteFile;
 //	全部文件
 element.allfile.onclick = function() {
   view(0)
+  var lis = list.querySelectorAll('li')
   if (lis.length == 0) {
     cannotChose()
   } else {
@@ -715,7 +724,7 @@ choseAll.onchange = function() {
   } else {
     hideFileBar();
   }
-  var lis = list.children;
+  var lis = list.querySelectorAll('li');
   for (var i = 0; i < chosenX.length; i++) {
     chosenX[i].checked = this.checked;
     chosenX[i].parentNode.style.display = this.checked ? 'block' : 'none';

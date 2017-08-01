@@ -76,88 +76,82 @@ function view(pid) {
 	var dataList = getChildren(_ID);
 	element.list.innerHTML = '';
 	dataList.forEach(function(item) {
-			var newname = item.name;
-			if (item.extname) {
-					newname += `(${item.extname})`;
-			}
+		var newname = item.name;
+		if (item.extname) {
+				newname += `(${item.extname})`;
+		}
 	    var li = document.createElement('li');
-			var figure = document.createElement('figure');
-			var div = document.createElement('div');
-			var p = document.createElement('p');
-			var input = document.createElement('input');
-			var label = document.createElement('label');
-			var chose = document.createElement('input');
-	    figure.className = item.type;
-			p.innerHTML = newname;
-			input.type = 'text';
-			chose.type = 'checkbox';
-			label.style.display = 'none';
-			input.style.display = 'none';
-			div.appendChild(p);
-			div.appendChild(input);
-			li.appendChild(figure);
-			li.appendChild(label);
-			label.appendChild(chose);
-			li.appendChild(div);
-			li.item = item;
-			li.onmouseover = function() {
-					var lis = this.parentNode.children;
-					label.style.display = 'block';
-					this.classList.add('liHover');
+		var figure = document.createElement('figure');
+		var div = document.createElement('div');
+		var p = document.createElement('p');
+		var input = document.createElement('input');
+		var label = document.createElement('label');
+		var chose = document.createElement('input');
+    	figure.className = item.type;
+		p.innerHTML = newname;
+		input.type = 'text';
+		chose.type = 'checkbox';
+		label.style.display = 'none';
+		input.style.display = 'none';
+		div.appendChild(p);
+		div.appendChild(input);
+		li.appendChild(figure);
+		li.appendChild(label);
+		label.appendChild(chose);
+		li.appendChild(div);
+		li.item = item;
+		li.onmouseover = function() {
+				var lis = this.parentNode.children;
+				label.style.display = 'block';
+				this.classList.add('liHover');
+		}
+		li.onmouseout = function() {
+			this.classList.remove('liHover');
+			if(this.className == 'liActive') {
+				label.style.display = 'block';
+			} else {
+				label.style.display = 'none';
 			}
-			li.onmouseout = function() {
-				this.classList.remove('liHover');
-				if(this.className == 'liActive') {
-					label.style.display = 'block';
-				} else {
-					label.style.display = 'none';
+		}
+		li.onclick = function(e) {
+			hideContextmenu(element.menu);
+			hideFileBar();
+			choseAll.checked = false;
+			//	到最底层时，全选不可选
+			var arr = [];
+			data.list.forEach(function(val) {
+				if(li.item.id == val.pid) {
+					arr.push(val)
 				}
-			}
-			li.onclick = function(e) {
-				hideContextmenu(element.menu);
-				hideFileBar();
-				choseAll.checked = false;
-				//	到最底层时，全选不可选
-				var arr = [];
-				data.list.forEach(function(val) {
-					if(li.item.id == val.pid) {
-						arr.push(val)
-					}
-				});
-				if(arr.length == 0) {
-					cannotChose();
-				}
-				//	如果是文件夹等可打开，其他就播放
-				if(item.type == 'floder'||item.type == 'exe'||item.type == 'html') {
-					view(item.id);
-				} else {
-					openMedia(item.newClass,item.type);
-				}
-			}
-	    	element.list.appendChild(li);
-			label.addEventListener('click',function(e) {
-				e.stopPropagation();
 			});
-			label.addEventListener('mousedown',function(e) {
-				e.stopPropagation();
-			});
+			if(arr.length == 0) {
+				cannotChose();
+			}
+			//	如果是文件夹等可打开，其他就播放
+			if(item.type == 'floder'||item.type == 'exe'||item.type == 'html') {
+				view(item.id);
+			} else {
+				openMedia(item.newClass,item.type);
+			}
+		}
+    	element.list.appendChild(li);
+		label.addEventListener('click',function(e) {
+			e.stopPropagation();
+		});
+		label.addEventListener('mousedown',function(e) {
+			e.stopPropagation();
+		});
 			///	勾选部分
 			var chosen = element.list.querySelectorAll('input[type="checkbox"]');
 			chosenX = chosen;
 			chosenX.forEach(function(val) {
 				val.onchange = function() {
-					var nub = 0;
 					selectedLi = this.parentNode.parentNode;
 					this.parentNode.parentNode.classList.add('liActive');
 					if(!this.checked) {
 						this.parentNode.parentNode.classList.remove('liActive');
 					}
-					//	全选
-					for(var i=0;i<chosenX.length;i++) {
-							if(chosenX[i].checked) {
-								nub++;
-							}
-					}
+					var nub = list.querySelectorAll('.liActive').length;
 					choseAll.checked = nub == chosenX.length?true:false;
 					hasChosen.innerHTML = nub;
 					if(nub == 0) {
