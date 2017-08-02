@@ -1,0 +1,97 @@
+/**
+ * CSS FILE FOR VELTEN MEDIA DIRECT ADMIN BRIDGE
+ * 
+ * Enhances the back-end user interface
+ * 
+ * @license		No license 
+ * (Without a license, the code is copyrighted by default. 
+ * People can read the code, but they have no legal right to use
+ * it. To use the code, you must contact the author directly and
+ * ask permission.)
+ *
+ * @author		Danny de Wit, Velten Media
+ * @link		http://veltenmedia.nl
+ * @email		d.dewit@veltenmedia.nl
+ * 
+ * @file		style.css
+ * @version		0.1
+ * @date		22-11-13
+ * 
+ * @copyright	22-11-13
+ */
+
+/**
+ * Form styling and enhancements
+ *
+ * Because the standard WordPress styling isn't that good...
+ */
+form.vmea-form span.vmea-required{
+	color:#CC0000;
+}
+
+form.vmea-form span.vmea-hint,
+form.vmea-form span.vmea-no-value{
+	font-size:83%;
+	color:grey;
+}
+
+form.vmea-form textarea.vmea-textarea{
+	width: 600px;
+	height: 300px;
+	resize: none; 
+}
+form.vmea-form .form-table th.wide{
+	width:350px;
+}
+
+
+/**
+ * jQuery UI Dialog
+ *
+ * Because the standard WordPress styling isn't that good...
+ */
+.vmea-dialog{
+	width:500px !important;
+	height:auto;
+}
+.vmea-dialog .ui-dialog-title{
+	padding: 6px;
+	font-size: 12px;
+	font-weight: normal;
+}
+.vmea-dialog .ui-dialog-titlebar-close{
+	top: 17px;
+}
+.vmea-dialog .vmea-dialog-content{
+	padding:.5em 1em;
+}
+.vmea-dialog button:focus{
+	outline:0;
+}
+.vmea-dialog button.delete,
+.vmea-dialog button.delete:focus,
+.vmea-dialog button.delete:hover{
+	background:#e85d5d;
+	border-color:#c73a3a;
+	color:#fff;
+	box-shadow:inset 0 1px 0 #f27e7e, 0 1px 0 rgba(0,0,0,.08);
+	text-shadow: none;
+}
+.vmea-dialog button.delete:active,
+.vmea-dialog button.delete:focus,
+.vmea-dialog button.delete:hover{
+	border-color:#911f1f;
+}
+.vmea-dialog button.delete:focus,
+.vmea-dialog button.delete:active{
+	background:#cc4545;
+	box-shadow: inset 0 2px 5px -3px rgba( 0, 0, 0, 0.5 );
+}
+/*
+     FILE ARCHIVED ON 11:18:57 May 27, 2016 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 14:31:26 Apr 24, 2017.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/

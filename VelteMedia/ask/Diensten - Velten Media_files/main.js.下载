@@ -1,0 +1,532 @@
+/**
+ * Main JavaScript file for the WordPres theme
+ *
+ * This file gets loaded for all users.
+ *
+ * @license		No license
+ * (Without a license, the code is copyrighted by default.
+ * People can read the code, but they have no legal right to use
+ * it. To use the code, you must contact the author directly and
+ * ask permission.)
+ *
+ * @author		Velten Media
+ * @link		http://www.veltenmedia.nl
+ * @email		info@veltenmedia.nl
+ *
+ * @file		main.js
+ *
+ * @copyright	(C) 2015, Velten Media
+ */
+
+
+(function($){
+	$(document).ready(function(){
+	
+		// Load on input and textarea elements if
+		// the jQuery Placeholder plugin is loaded
+		if($.isFunction($.fn.placeholder)){
+			$('input, textarea').placeholder();
+		}
+
+		$(window).load(function() {
+			$('.animate-this').addClass('animate');
+		})
+
+		$('.trigger').on('click', function(e) {
+			e.preventDefault();
+			$(this).toggleClass('on');
+			$('.header .nav').toggleClass('on');
+		});
+
+		// Close
+		$('.notification').addClass('show');
+		$('.notification .close').on('click', function() {
+			$('.notification').removeClass('show');
+		});
+
+		// Select animation
+		[].slice.call( document.querySelectorAll('select.cs-select') ).forEach( function(el) {
+			new SelectFx(el);
+		} );
+
+		// Footer hover
+		$('.footer .go').mouseover(function() {
+			$('.footer .top').addClass('hover');
+		}).mouseout(function() {
+			$('.footer .top').removeClass('hover');
+		});
+		$('.cs-placeholder').on('click', function(e) {
+			e.preventDefault();
+			$('body').toggleClass('disable-scroll');
+		});
+
+		// Animsition
+
+		/*
+		$('.animsition').animsition({
+			inClass: 'fade-in-up-sm',
+			outClass: 'fade-out-up-sm',
+			inDuration: 1500,
+			outDuration: 800,
+			linkElement: '.animsition-link, .header a',
+
+			loading: true,
+			loadingParentElement: 'body', //animsition wrapper element
+			loadingClass: 'animsition-loading',
+			loadingInner: '', // e.g '<img src="loading.svg" />'
+			timeout: false,
+			timeoutCountdown: 5000,
+			onLoadEvent: true,
+			browser: [ 'animation-duration', '-webkit-animation-duration'],
+
+
+			overlay : false,
+			overlayClass : 'animsition-overlay-slide',
+			overlayParentElement : 'body',
+			transition: function(url){ window.location.href = url; }
+		});
+		*/
+
+
+		$('.bxslider').bxSlider({
+			auto: true,
+			pause: 3500,
+			nextText: '',
+			prevText: ''
+		});
+
+		$('.bx-slider').bxSlider({
+		  	auto: false,
+		  	pager: false,
+			nextText: '',
+			prevText: ''
+		});
+
+		$('.laptop-slider').bxSlider({
+			pause: 5000,
+			speed: 1000,
+		  	auto: true,
+		  	pager: false,
+			nextText: '',
+			prevText: ''
+		});
+
+		$('.bg-laptop-slider').bxSlider({
+			pause: 5000,
+			mode: 'fade',
+			speed: 1000,
+		  	auto: true,
+		  	pager: false,
+			nextText: '',
+			prevText: ''
+		});
+
+		// Laptop slider op Sam Feldt case pagina. Zorgt ervoor dat laptop slider en bg slider beide werken tijdens klik.
+		var bxwrapper = $('.laptop-slider').parent().parent();
+		var bxprev = $(bxwrapper).find('.bx-controls .bx-controls-direction .bx-prev');
+		var bxnext = $(bxwrapper).find('.bx-controls .bx-controls-direction .bx-next');
+
+		var bxwrapperbg = $('.bg-laptop-slider').parent().parent();
+		var bxprevbg = $(bxwrapperbg).find('.bx-controls .bx-controls-direction .bx-prev');
+		var bxnextbg = $(bxwrapperbg).find('.bx-controls .bx-controls-direction .bx-next');
+
+		$(bxprev).on('click', function(){
+			$(bxprevbg).trigger('click');
+		});
+
+		$(bxnext).on('click', function(){
+			$(bxnextbg).trigger('click');
+		});
+
+
+		// Scroll To
+		$('a[href*="#"]:not([href="#"])').click(function() {
+			if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+				var target = $(this.hash);
+				target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+				if (target.length) {
+					$('html,body').animate({
+					scrollTop: target.offset().top-159
+					}, 1000);
+				return false;
+				}
+			}
+		});
+
+		// Waypoints
+		$('#wie, #cultuur, #manifest, #timeline').waypoint({
+			offset: 200,
+			handler: function(direction) {
+				if(direction == 'down')
+				{
+					$('ul.navigationables-nav li a').removeClass('active').filter('[href="#'+this.id+'"]').addClass('active');
+				}
+				else
+				{
+					$('ul.navigationables-nav li a').removeClass('active').filter('[href="#'+this.id+'"]').parent().prev().find('a').addClass('active');
+				}
+			}
+		});
+
+		// MatchHeight
+		$('.social-block, .match, .services .service').matchHeight();
+
+		// Waypoints
+		$('.buttons-wrapper').waypoint(function() {
+			$('.editor h2 span.icon-heart').addClass('pulse');
+		});
+
+		$('.wireframes .col-1-1').waypoint({
+			offset: 230,
+			handler: function() {
+				$(this).toggleClass('stick');
+			}
+		});
+		$('.responsive').waypoint({
+			offset: '90%',
+			handler: function() {
+				$('.wireframes .col-1-1').toggleClass('fade-out');
+			}
+		});
+		$('.slippers-animation').waypoint({
+			offset: '100%',
+			handler: function() {
+				$('.slippers-animation ul li').addClass('show');
+			}
+		});
+
+		$('.social-animation').waypoint({
+			offset: '90%',
+			handler: function() {
+				$('.social-animation ul li').addClass('show');
+			}
+		});
+
+		$('.iphone-animation').waypoint({
+			offset: '75%',
+			handler: function() {
+				$('.iphone-animation img').addClass('show');
+				$('.iphone-animation .covers').addClass('show');
+				$('.iphone-animation .covers li').addClass('show');
+			}
+		});
+
+		$('.tourdates-ul ul').waypoint({
+			offset: '100%',
+			handler: function() {
+				$('.tourdates-ul ul li .bit-date').addClass('show');
+				$('.tourdates-ul ul li .bit-venue').addClass('show');
+				$('.tourdates-ul ul li .bit-location').addClass('show');
+			}
+		});
+
+		$('.responsive .iphone-ipad').waypoint({
+			offset: '75%',
+			handler: function() {
+				$('.responsive .iphone-ipad .iphone').addClass('show');
+				$('.responsive .iphone-ipad .ipad').addClass('show');
+			}
+		});
+
+		$('.single-post .blocks-bottom').waypoint({
+			offset: 400,
+			handler: function() {
+				$('.author-wrapper, .header-sub.single-post-header, .footer .top').toggleClass('hide');
+				$('.header').toggleClass('force-sub');
+			}
+		});
+
+		$('.timePosted').text(function() {
+			return $(this).text().replace("Posted on", "hello everyone");
+		});
+		
+		
+		
+		$('.cs-options li').on('click', function(event){
+
+	 		var drank = $(this).attr('data-value');
+	 		
+	 		if(typeof(Storage) !== "undefined") {
+				localStorage.setItem('drank', drank);
+				window.location = 'http://veltenmedia.nl/contact/#form';
+			} else {
+			    window.location = 'http://veltenmedia.nl/contact/#form';
+			}
+	
+		});
+		
+		var getDrank = localStorage.getItem('drank');
+		
+		if ( getDrank == 'koffie' ) {
+			$('.drankje select option[value="Kopje koffie"]').attr('selected','selected');
+		} else if ( getDrank == 'thee' ) {
+			$('.drankje select option[value="Kopje thee"]').attr('selected','selected');
+		} else if ( getDrank == 'bier' ) {
+			$('.drankje select option[value="Biertje"]').attr('selected','selected');
+		} else if ( getDrank == 'water' ) {
+			$('.drankje select option[value="Glaasje water"]').attr('selected','selected');
+		}
+		
+		
+		
+
+		$('#checkbox-website input[type="checkbox"]').attr('id','checkbox-1');
+		$('#checkbox-online-marketing input[type="checkbox"]').attr('id','checkbox-2');
+		$('#checkbox-app input[type="checkbox"]').attr('id','checkbox-3');
+		$('#checkbox-anders input[type="checkbox"]').attr('id','checkbox-4');
+
+		$('label').click(function(){
+		  $(this).toggleClass('on').parent().siblings('.wpcf7-form-control-wrap').find('input[type="checkbox"]').toggleClass('on');
+		});
+
+		$('.medewerker .checkbox').click(function(){
+		  $(this).toggleClass('check');
+		});
+
+		// Open voorwaarden op tarieven pagina
+		$('.voorwaarden-link').on('click', function() {
+			$('.tarieven').slideToggle();
+
+
+				var $tarieven = $('.tarieven').height();
+				var $minHeight = 5;
+
+				if($tarieven < $minHeight) {
+
+					$('.bekijk').removeClass('open');
+					$('.bekijk').addClass('close');
+
+					$('.sluit').removeClass('close');
+					$('.sluit').addClass('open');
+
+				} else if($tarieven > $minHeight) {
+
+					$('.sluit').removeClass('open');
+					$('.sluit').addClass('close');
+
+
+					$('.bekijk').removeClass('close');
+					$('.bekijk').addClass('open');
+
+				}
+		});
+
+		$('a[href][data-action="social-share"]').on('click', function(event){
+            event.preventDefault();
+
+            var $el     = $(this);
+            var method  = $el.data('method');
+
+            var link    = $el.attr('href');
+            var encLink = encodeURIComponent(link);
+
+            var title   = $el.attr('title'),
+                title   = escape(title);
+
+            var summary = $el.data('summary'),
+                encSummary = encodeURIComponent(summary);
+
+            var encSource = encodeURIComponent('Velten Media');
+
+            var position = {
+                top:  ($(window).height()/2 - 225),
+                left: ($(window).width()/2)
+            }
+
+            switch(method){
+                case 'facebook':
+                    window.open(
+                        'https://www.facebook.com/sharer/sharer.php?u='+encLink,
+                        'vm-socialshare-facebook',
+                        'width=626, height=436, top='+position.top+', left='+position.left+', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0'
+                    );
+                break;
+                case 'twitter':
+                    window.open(
+                        'http://twitter.com/share?url='+link+'&text=' + title,
+                        'vm-socialshare-twitter',
+                        'width=550, height=450, top='+position.top+', left='+position.left+', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0'
+                    );
+                break;
+                case 'linkedin':
+                    window.open(
+                        'http://www.linkedin.com/shareArticle?mini=true&url='+encLink+'&title='+title+'&summary='+encSummary+'&source='+encSource,
+                        'vm-socialshare-linkedin',
+                        'width=550, height=450, top='+position.top+', left='+position.left+', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0'
+                    );
+                break;
+            }
+        });
+	});
+	
+	
+	// New Frontpage
+	
+	
+	var $current = $('.current');
+	var $total = $('.total');
+	var $verticalSlider = $('.vertical-home-slider-top');
+	
+	$verticalSlider.on('init reInit afterChange', function(event, slick, currentSlide, nextSlide){
+	    //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
+	    var i = (currentSlide ? currentSlide : 0) + 1;
+	    $current.text('0' + i);
+	    $total.text('/  ' + '0' + slick.slideCount);
+	});
+	
+	
+	$verticalSlider.slick({
+		autoplay: true,
+		autoplaySpeed: 7000,
+		speed: 1000,
+		arrows: false,
+		pauseOnHover: false,
+		cssEase: 'ease-out',
+		useTransform: true,
+		fade: true,
+		dots: true,
+	});
+// 	$verticalSlider.slick('slickPlay');
+	
+	var $clientInfoSlider = $('.client-info-slider');
+	$clientInfoSlider.slick({
+		autoplay: true,
+		autoplaySpeed: 7000,
+		speed: 1000,
+		arrows: false,
+		draggable: false,	
+		pauseOnHover: false,
+		cssEase: 'ease-out',
+		useTransform: true,
+		arrows: true,
+		asNavFor: '.vertical-home-slider-top',
+		responsive: [
+			{
+				breakpoint: 1024,
+				settings: {
+					draggable: true,
+				}
+			},
+		]			
+	});
+	
+	$('.slide-link').on('click', function() {
+		$('.client-info-slider .slick-next').trigger('click');
+	});
+	
+	$('body').addClass('animate-frontpage')
+	
+	// G-G-G-Greeeeensock
+
+	
+	
+	$(function() {
+        if ($(window).width() > 768 ) {
+	        TweenMax.to($('.header.frontpage'), 0.25, { opacity:'1', delay:3.3 });
+	        TweenMax.to($('.overlay-left-top'), 1.5, { left:'100%', delay:1 });
+			TweenMax.to($('.left-top-main .main-intro span.top'), 0.75, { transform:'translate3D(0,0,0)', delay:2 });
+			TweenMax.to($('.left-top-main .main-intro span.bottom'), 0.75, { transform:'translate3D(0,0,0)', delay:2.2 });
+			TweenMax.to($('.main-intro-last'), 0.85, { left:'50%', visibility:'visible', delay:2.3 });
+			
+			$('.vimeo-link').on('click', function() {
+				TweenMax.to($('.main-intro, .intro-bottom, .client-info, .main-intro-last-cont, .header, .mouse'), 0.5, { opacity: '0' });
+				TweenMax.to($('.main-top-grid'), 1.2, { x: '50%', delay:0.3, ease: 'easeInOut'});
+				TweenMax.to($('.background-left-top'), 1.2, { x: '-100%', delay:0.3, ease: 'easeInOut' });
+				
+				setTimeout(function(){
+					$('.wrapper').addClass('open');
+				}, 500);
+				
+				setTimeout(function(){
+					$('.corporate-vimeo').addClass('show');
+					$('.close-video-cursor.touch').addClass('show');
+				}, 900);	
+				$verticalSlider.slick('slickPause');
+				$clientInfoSlider.slick('slickPause');
+			});
+	    }
+	});        
+	
+	$(function() {
+        if ($(window).width() <= 768 ) {
+	        TweenMax.to($('.header.frontpage'), 0.25, { opacity:'1', delay: 0.5 });
+	        TweenMax.to($('.overlay-left-top'), 1, { opacity: '0', delay: 0.5 });
+/*
+	        TweenMax.to($('.left-top-main .main-intro span.top'), 0.75, { transform:'translate3D(0,0,0)', opacity:1, delay:1.2 });
+	        TweenMax.to($('.left-top-main .main-intro span.bottom'), 0.75, { transform:'translate3D(0,0,0)', opacity:1, delay:1.4 });
+*/
+	        
+	        $('.vimeo-link').on('mouseup touchestart', function() {
+				TweenMax.to($('.main-intro, .intro-bottom, .client-info, .main-intro-last-cont, .header, .mouse'), 0.5, { opacity: '0' });
+				
+				setTimeout(function(){
+					$('.wrapper').addClass('open');
+				}, 500);
+				
+				setTimeout(function(){
+					$('.corporate-vimeo').addClass('show');
+					$('.close-video-cursor.touch').addClass('show');
+				}, 900);	
+			});
+	    }
+	});        
+	
+	$(document).on('mousedown touchstart', function (e)
+	{
+	    var container = $(".corporate-vimeo-iframe");
+	
+	    if (!container.is(e.target) && container.has(e.target).length === 0 && $('.corporate-vimeo').is('.show') ) 
+	    {
+	       $('.corporate-vimeo').removeClass('show');
+	       $('.close-video-cursor.touch').removeClass('show');
+	       $('.wrapper').removeClass('open');
+	       TweenMax.to($('.main-intro, .intro-bottom, .client-info, .main-intro-last-cont, .header, .mouse'), 0.5, { opacity: '1', delay:0.9 });
+	       TweenMax.to($('.main-top-grid'), 1.2, { x: '-50%', ease: 'easeOut'});
+	       TweenMax.to($('.background-left-top'), 1.2, { x: '0%', ease: 'easeOut'});
+	       var iframevimeo = $('.auto-size-container').find('iframe')[0];
+		   var player = $f(iframevimeo);
+		   player.api("pause");
+		   $verticalSlider.slick('slickPlay');
+		   $clientInfoSlider.slick('slickPlay');
+	    } 
+	});
+	
+		// Video play knop in wrapper van yt of vimeo video + plus koppeling aan play functie
+		//Add class to iframe parent
+	
+	
+	//Play video on click
+	$('.vimeo-link').on('mouseup touchestart', function(ev) {
+			
+		$(this).addClass('play');
+		var iframe = $('.corporate-vimeo').find('iframe');
+		var src = $(iframe).attr('src');
+		
+		// if video src is youtube
+		if (src.indexOf("youtube") >= 0) {
+			$(iframe)[0].src += "&autoplay=1";
+			ev.preventDefault();
+		
+		// if video src is vimeo	
+		} else if (src.indexOf("vimeo") >= 0) {
+			var iframevimeo = $('.auto-size-container').find('iframe')[0];
+			var player = $f(iframevimeo);
+			setTimeout(function(){
+				player.api("play");
+			}, 1100);
+		}	    
+	 
+	});
+	
+	setTimeout(function () {
+	    $('body').addClass('no-delay');
+    }, 5000);
+        
+    jQuery(window).load(function() {
+		setTimeout(function () {
+	    jQuery('.social-stream .tweets-wrapper .tweets ul li').matchHeight();
+    }, 50);
+	 
+	});
+	
+})(jQuery); 

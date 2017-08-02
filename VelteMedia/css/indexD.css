@@ -1,0 +1,23 @@
+.introduce {
+	padding-top:130px;
+}
+.introduce h2 {
+	font-size:34px;
+    transition:1s;
+}
+.footerBottom .footLeft {
+	float:none;
+	width:100%;
+}
+.footerBottom .footMiddle {
+	float:none;
+	width:100%;
+}
+.footerBottom .footRight {
+	float:none;
+	width:100%;
+}
+.footerBottom .footerW {
+	float:none;
+	width:100%;
+}

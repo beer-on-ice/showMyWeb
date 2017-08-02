@@ -1,0 +1,116 @@
+/**
+ * Main JavaScript file for the WordPres theme
+ *
+ * This file gets loaded for all users.
+ *
+ * @license		No license
+ * (Without a license, the code is copyrighted by default.
+ * People can read the code, but they have no legal right to use
+ * it. To use the code, you must contact the author directly and
+ * ask permission.)
+ *
+ * @author		Velten Media
+ * @link		http://www.veltenmedia.nl
+ * @email		info@veltenmedia.nl
+ *
+ * @file		desktop.js
+ *
+ * @copyright	(C) 2015, Velten Media
+ */
+
+
+
+(function($){
+
+	$(document).ready(function(){
+
+		// Homepage slider
+		if($('.vertical-home-slider').length > 0){
+			$('.vertical-home-slider').bxSlider({
+			  mode: 	'vertical',
+			  speed:	750,
+			  auto: 	true,
+			  controls: false,
+			  onSlideAfter: function (currentSlideNumber, totalSlideQty, currentSlideHtmlObject) {
+		        $('.active-slide').removeClass('active-slide');
+		        $('.vertical-home-slider > li').eq(currentSlideHtmlObject + 1).addClass('active-slide');
+		      },
+		      onSliderLoad: function () {
+				$('.preload').addClass('hide');
+				$('.blocks-front .left, .blocks-front .right .top, .blocks-front .right .bottom').addClass('show');
+		        $('.vertical-home-slider > li').eq(1).addClass('active-slide');
+		      },
+			});
+		}
+		
+/*
+		// Homepage slider
+		if($('.vertical-home-slider-top').length > 0){
+			$('.vertical-home-slider-top').bxSlider({
+			  mode: 	'horizontal',
+			  speed:	1000,
+			  auto: 	true,
+			  pause:	7500,
+			  pager:	true,
+			  controls: false,
+			  onSlideAfter: function (currentSlideNumber, totalSlideQty, currentSlideHtmlObject) {
+		        $('.active-slide').addClass('active-slide');
+		        $('.vertical-home-slider-top > li').eq(currentSlideHtmlObject + 1).addClass('active-slide');
+		      },
+		      onSliderLoad: function () {
+				$('.preload').addClass('hide');
+				$('.blocks-front .left, .blocks-front .right .top, .blocks-front .right .bottom').addClass('show');
+		        $('.vertical-home-slider-top > li').eq(1).addClass('active-slide');
+		      },
+			});
+		}
+*/
+		
+		
+		
+
+		// Appear
+	    $('.item-wrapper').on('appear', function(e, $affected) {
+			$(this).addClass('fly');
+		}).appear({force_process: true});
+
+	    $('.big-list').on('appear', function(e, $affected) {
+			$(this).addClass('scroll');
+		}).appear({force_process: true});
+
+	   	// Skrollr
+		var s = skrollr.init({forceHeight: false});
+		
+		// Service icon animation hovers
+		$("#ww").mouseenter(function(){
+			$('.icon-seq-ww').addClass('hover');
+			setTimeout(function(){
+	            $('.icon-seq-ww').removeClass("hover");
+	        }, 650);
+		});
+		
+		$("#om").mouseenter(function(){
+			$('.icon-seq-om').addClass('hover');
+			setTimeout(function(){
+	            $('.icon-seq-om').removeClass("hover");
+	        }, 650);
+		});
+		
+		$("#wa").mouseenter(function(){
+			$('.icon-seq-wa').addClass('hover');
+			setTimeout(function(){
+	            $('.icon-seq-wa').removeClass("hover");
+	        }, 650);
+		});
+		
+		$("#hed").mouseenter(function(){
+			$('.icon-seq-hed').addClass('hover');
+			setTimeout(function(){
+	            $('.icon-seq-hed').removeClass("hover");
+	        }, 650);
+		});
+		
+		
+
+	});
+})(jQuery);

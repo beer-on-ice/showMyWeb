@@ -1,0 +1,134 @@
+.header nav {
+	display:none;
+}
+
+.listIcon {
+	position:absolute;
+	right:28px;
+	top:30px;
+	width:28px;
+	padding-top:22px;
+	height:0;
+	display:block;
+}
+.listIcon::after {
+	width:28px;
+	height:22px;
+	background-position:-60px 0;	
+}
+.listIcon:checked+label .dropS {
+	display:block;
+}
+.shutIcon {
+	position:absolute;
+	right:28px;
+	top:30px;
+	width:28px;
+	padding-top:22px;
+	z-index:9;
+}
+.shutIcon::after {
+	width:19px;
+	height:18px;
+	background-position:-100px 0;	
+}
+.shutIcon:checked +label .drop-list {
+	display:none;
+}
+.contact {
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:100%;
+    border-top:2px solid #fff;
+}
+.contact a {
+	float:left;
+    width:50%;
+    height:52px;
+    color: #fff;
+    background: #2d3135;
+    box-sizing:border-box;
+    border-right:2px solid #fff;
+    text-align:center;
+}
+.contact a:nth-of-type(2) {
+	border:none;
+}
+.contact .dial,
+.contact .email {
+	width:21px;
+	height:30px;
+	top:12px;
+}
+.contact .dial::after {
+	width:21px;
+	height:30px;
+	background-position: -130px 0;
+}
+.contact .email {
+	width:30px;
+	height:29px;
+}
+.contact .email::after {
+	width:30px;
+	height:29px;
+	background-position: -160px 0;
+}
+.imgList p {
+	opacity:1;
+}
+.imgList span {
+	opacity:1;
+}
+.imgList .hoverUp {
+	transform:translateY(-50px);
+}
+.imgList li {
+	padding-top:60px;
+	padding-bottom:0;
+	height:auto;
+}
+.introduceBg {
+	width:95%;
+}
+.advantage {
+	width:95%;
+}
+.advantage h2 {
+	font-size:34px;
+}
+.addPage li {
+	float:none;
+	width:100%;
+	height:auto;
+}
+.top {
+	width:100%;
+	text-align:center;
+}
+.top span {
+	float:none;
+	display:block;
+}
+.drink {
+	width:100%;	
+	text-align:center;
+}
+.drink span {
+	float:none;
+	display:inline-block;
+}
+.footerBottom .footLeft {
+	width:50%;
+}
+.footerBottom .footMiddle {
+	width:50%;
+}
+.footerBottom .footRight {
+	width:50%;
+}
+.footerBottom .footerW {
+	float:right;
+	width:50%;
+}
