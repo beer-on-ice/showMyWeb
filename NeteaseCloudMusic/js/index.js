@@ -306,19 +306,26 @@ $('table').delegate('.addMylove', 'click', function() {
 			time:  love.children[5].innerHTML,
 			picUrl: love.children[6].innerHTML
 		});
-		loveList = [...new Set(loveList)];
 	}
+	// 数组对象去重（百度来，不理解）
+	var hash = {};
+	loveList = loveList.reduce(function(item, next) {
+	    hash[next.id] ? '' : hash[next.id] = true && item.push(next);
+	    return item
+	}, [])
 	sessionStorage.setItem('loveList', JSON.stringify(loveList));
 })
-var loveHtml = ''
+var loveHtml = '';
 //////////////////     我喜欢的音乐点击打开          ////////////////
 $('.list_create_001').on('click',function() {
+	loveHtml = '';
 	loveList = sessionStorage.getItem('loveList');
 	if (!loveList) {
 		loveList = [];
 	} else {
 		loveList = JSON.parse(loveList);
 	}
+	var length = loveList.length;
 	loveList.forEach(function(item,i) {
 		loveHtml += `<tr data-musicid="${item.id}">
 			<td class="index" data-num="`+((+i+1)<10?"0"+(+i+1):(+i+1))+`">`+((+i+1)<10?"0"+(+i+1):(+i+1))+`</td>
@@ -338,36 +345,47 @@ $('.list_create_001').on('click',function() {
 
 
 //	存储已存在的首页歌曲
-var indexList = $('.indexS');
-indexList = $.makeArray( indexList )
-indexList.forEach(function(item) {
-	indexList = sessionStorage.getItem('indexList');
-	if (!indexList) {
-		indexList = [{
-			id: item.dataset.musicid,
-			name: item.children[2].innerHTML,
-			singer: item.children[3].innerHTML,
-			album: item.children[4].innerHTML,
-			time:  item.children[5].innerHTML,
-			picUrl: item.children[6].innerHTML
-		}];
+	var indexList = $('.indexS');
+	var len = indexList.length;
+	var len2 = 0;
+	indexList = $.makeArray( indexList );
+	//每次刷新，sessionStorage就存一次
+	indexList.forEach(function(item) {
+		indexList = sessionStorage.getItem('indexList');
+		if (!indexList) {
+			indexList = [{
+				id: item.dataset.musicid,
+				name: item.children[2].innerHTML,
+				singer: item.children[3].innerHTML,
+				album: item.children[4].innerHTML,
+				time:  item.children[5].innerHTML,
+				picUrl: item.children[6].innerHTML
+			}];
+		} else {
+			indexList = JSON.parse(indexList);
+			indexList.push({
+				id: item.dataset.musicid,
+				name: item.children[2].innerHTML,
+				singer: item.children[3].innerHTML,
+				album: item.children[4].innerHTML,
+				time:  item.children[5].innerHTML,
+				picUrl: item.children[6].innerHTML
+			});
+		}
+		sessionStorage.setItem('indexList', JSON.stringify(indexList));
+	});
+	
+	len2 = indexList.length;
+	if(len > len2) {
+		console.log('要存储');
 	} else {
-		indexList = JSON.parse(indexList);
-		indexList.push({
-			id: item.dataset.musicid,
-			name: item.children[2].innerHTML,
-			singer: item.children[3].innerHTML,
-			album: item.children[4].innerHTML,
-			time:  item.children[5].innerHTML,
-			picUrl: item.children[6].innerHTML
-		});
-		indexList = [...new Set(indexList)];
+		console.log('不存储');
 	}
-	sessionStorage.setItem('indexList', JSON.stringify(indexList));
-})
+
 
 //////////////// 首页歌单点击		////////////////
 $('.list_create_like ').on('click',function() {
+	loveHtml = '';
 	indexList = sessionStorage.getItem('indexList');
 	if (!indexList) {
 		indexList = [];
