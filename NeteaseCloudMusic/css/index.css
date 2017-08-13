@@ -197,6 +197,7 @@ table,td,th{
 	position:absolute;
 	top:0;left:0;
 	width:0;
+	height:6px;
 	height:100%;
 	border-radius:5px;
 	background-color:#e73d3d;

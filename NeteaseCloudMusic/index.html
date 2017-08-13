@@ -40,8 +40,8 @@
 					</span>
 				</p>
 				<div class="btngroups">
-					<p class="btn list_create_like active" id="list_create_like"><i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;&nbsp;我喜欢的音乐</p>
-					<p class="btn list_create_001"><i class="fa fa-music" aria-hidden="true"></i>&nbsp;&nbsp;孤独的键</p>
+					<p class="btn list_create_like active" id="list_create_like"><i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;&nbsp;孤独的键</p>
+					<p class="btn list_create_001"><i class="fa fa-music" aria-hidden="true"></i>&nbsp;&nbsp;我喜欢的音乐</p>
 				</div>
 			</div>
 			<div class="list list_collect">
@@ -106,11 +106,11 @@
 		<div class="playerbar_others">
 			<div class="volume">
 				<div class="mutebtn" id="muteBtn" title="静音"><i class="fa fa-volume-up" aria-hidden="true"></i></div>
-				<!-- <input class="progress" id="vol_progress_box" style="width:40px;" type="range" min="0" value="1" max="1" step=".1"> -->
 				<div class="progress" id="vol_progress_box">
 					<div class="progress_curbar" id="vol_progress_bar">
 						<div class="curbar_arc" id="vol_progress_arc"></div>
 					</div>
+					<!-- <input class="progress" id="vol_progress_box" style="width:40px;" type="range" min="0" value="1" max="1" step=".1"> -->
 				</div>
 			</div>
 		</div>
@@ -130,7 +130,7 @@
 						</div>
 						<div class="detail_name">
 							<span class="listtag">歌单</span>
-							<span class="listname" id="playlist_listName">歌单名称</span>
+							<span class="listname" id="playlist_listName">孤独的键</span>
 						</div>
 						<div class="detail_time">
 							<span class="userpic"><a href="javascript:void(0);"><img src="./images/user_face.png" alt="" id="playlist_userFace" /></a></span>
@@ -172,16 +172,26 @@
 								</tr>
 							</thead>
 							<tbody class="infolist" id="infoList_playlist">
-								<!-- <tr>
-									<td class="index">01</td>
-									<td><i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;
-				<i class="fa fa-download" aria-hidden="true"></i>
-				</td>
-									<td>-SONGNAME-</td>
-									<td>-SINGER-</td>
-									<td>-ALBUM-</td>
-									<td>00:00</td>
-								</tr> -->
+								<tr data-musicid="407839677"  class="indexS">
+				                    <td class="index" data-num="01">01</td>
+				                    <td><i class="fa fa-heart-o addMylove" aria-hidden="true"></i>&nbsp;
+				        <i class="fa fa-download" aria-hidden="true"></i></td>
+				                    <td>HandClap</td>
+				                    <td>Fitz &amp; the Tantrums</td>
+				                    <td>Fitz &amp; the Tantrums</td>
+				                    <td>03:13</td>
+				                    <td style="display:none">http://p1.music.126.net/SVMVN3UZpDQ3AL57nTZSNg==/18209012067816536.jpg</td>
+				                </tr>
+								<tr data-musicid="26584442" class="indexS">
+				                    <td class="index" data-num="01">02</td>
+				                    <td><i class="fa fa-heart-o addMylove" aria-hidden="true"></i>&nbsp;
+				        <i class="fa fa-download" aria-hidden="true"></i></td>
+				                    <td>风的季节</td>
+				                    <td>Soler</td>
+				                    <td>历久尝新</td>
+				                    <td>04:09</td>
+				                    <td style="display:none">http://p1.music.126.net/-eqaVo-47yPxQ-RVz3wwcA==/4439827952969202.jpg</td>
+				                </tr>
 							</tbody>
 							</tfoot>
 						</table>
@@ -284,18 +294,7 @@
 									<th>时长</th>
 								</tr>
 							</thead>
-							<tbody class="infolist" id="infoList_search">
-								<!-- <tr>
-									<td class="index">01</td>
-									<td><i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;
-				<i class="fa fa-download" aria-hidden="true"></i>
-				</td>
-									<td>-SONGNAME-</td>
-									<td>-SINGER-</td>
-									<td>-ALBUM-</td>
-									<td>00:00</td>
-								</tr> -->
-							</tbody>
+							<tbody class="infolist" id="infoList_search"></tbody>
 							</tfoot>
 						</table>
 					</div>

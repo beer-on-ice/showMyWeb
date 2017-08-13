@@ -72,3 +72,86 @@ function stylePlayBtn($ele,playType) {
 	$ele.html((playType==="play"?html_pause:html_play));
 
 };
+
+//	各类进度条拖拽事件
+function dragProgress(data) {
+	var progressArc = data.progressArc;
+	var progressBar = data.progressBar;
+	var progressBox = data.progressBox;
+	var audio = data.audio
+	//获取进度条初始位置
+	var progressBoxOffset = progressBox.get(0).getBoundingClientRect();
+	var changeVal = 0;
+	//	鼠标按下
+	progressArc.on('mousedown',function(e) {
+		var x = e.clientX;
+		//获取拖动按钮的位置
+		var arcOffset = progressArc.get(0).getBoundingClientRect();
+		var arcOffsetL = arcOffset.left;
+	    var disX = x - arcOffsetL;
+		function moveArc(e) {
+			var nowX = e.clientX;
+			// 计算出移动了多少(鼠标当前位置 - 进度条距离左边框位置 - 鼠标点击初始位置/进度条可视宽)得出比例
+			var nowdisX = (((nowX- progressBoxOffset.left - disX)/progressBoxOffset.width)*100).toFixed(2);
+			// 过界处理
+			nowdisX = nowdisX <= 0 ? 0:( nowdisX >= 100?100 : nowdisX);
+			// 判断是否可以播放
+	        if (!!audio.attr("src")) {
+				//	进度条样式更新
+		        progressBar.css("width", nowdisX + "%");
+	           	// 改变系统音量同步
+	           	changeVal = data.callback_move && data.callback_move( nowdisX );
+	        }
+		}
+		function onmouseup() {
+			$(document).off("mousemove",moveArc);
+			$(document).off("mouseup",onmouseup);
+			// 判断是否可以播放
+				//转换成布尔值
+			if (!!audio.attr("src")) {
+	        	// 改变音乐进度同步
+				data.callback_up && data.callback_up(changeVal);
+	        }
+		};
+		// 鼠标移动
+		$(document).on('mousemove',moveArc)
+		// 鼠标抬起
+		$(document).on('mouseup',onmouseup)
+	});
+};
+
+
+function dblPlay() {
+	//  单独tr的双击播放后，左下小窗变成对应音乐的信息
+	$('tr').on('dblclick',function() {
+		var _this = this;
+		currentPlay = this
+		$('tr').eq(0).find("td.index").html('<i class="fa fa-volume-up" aria-hidden="true"></i>').addClass("active");
+		$('.songname').html(this.children[2].innerHTML);
+		$('.singersname').html(this.children[3].innerHTML);
+		$('.albumname').html(this.children[4].innerHTML);
+		$('.poster img').attr("src",this.children[6].innerHTML);
+		$('#smallwindow_singerName').html(this.children[3].innerHTML);
+		$('#smallwindow_albumPic').attr("src",this.children[6].innerHTML);
+		$.ajax({
+			url: '/music/url',
+			data: {
+			  id: this.dataset.musicid
+			},
+			success(data) {
+				//播放按钮变化
+				stylePlayBtn($('#playBtnGroup').find(".play"),"play");
+				//当前播放行高亮
+				$('tr').find("td.index").each(function (index,item) {
+					$(item).html(item.dataset.num).removeClass("active");
+				});
+				$(_this).find("td.index").html('<i class="fa fa-volume-up" aria-hidden="true"></i>').addClass("active");
+				$(media).attr("src",data.data[0].url);
+				//	歌曲播放
+				$(media).on("canplay",function () {
+					this.play();
+				});
+			}
+		});
+	});
+}
