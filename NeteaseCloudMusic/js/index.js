@@ -346,8 +346,6 @@ $('.list_create_001').on('click',function() {
 
 //	存储已存在的首页歌曲
 	var indexList = $('.indexS');
-	var len = indexList.length;
-	var len2 = 0;
 	indexList = $.makeArray( indexList );
 	//每次刷新，sessionStorage就存一次
 	indexList.forEach(function(item) {
@@ -372,16 +370,14 @@ $('.list_create_001').on('click',function() {
 				picUrl: item.children[6].innerHTML
 			});
 		}
+		// 数组对象去重（百度来，不理解）
+		var hash = {};
+		indexList = indexList.reduce(function(item, next) {
+			hash[next.id] ? '' : hash[next.id] = true && item.push(next);
+			return item
+		}, [])
 		sessionStorage.setItem('indexList', JSON.stringify(indexList));
 	});
-	
-	len2 = indexList.length;
-	if(len > len2) {
-		console.log('要存储');
-	} else {
-		console.log('不存储');
-	}
-
 
 //////////////// 首页歌单点击		////////////////
 $('.list_create_like ').on('click',function() {
