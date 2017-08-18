@@ -23,15 +23,17 @@ $(function () {
 });
 /////////////////   一些基础的交互     /////////////////
 // 顶部菜单input回车搜索
-$("#inpSearch").on("keydown",function (ev) {
-    var ev=ev || window.event;
-    if (ev.keyCode===13) {
+$("#inpSearch").on("keydown",function (e) {
+    var e=e || window.event;
+    if (e.keyCode === 13) {
         funcSearch();
+		searchMusic();
     }
 });
 // 顶部菜单query图标点击搜索
 $("#top_searchBtn").on("click",function () {
     funcSearch();
+	searchMusic();
 });
 // 展开与缩放歌曲详情页
 $("#btnExpandPlayBox").on("click",function () {
@@ -53,46 +55,6 @@ $("#btnCompressPlayBox").on("click",function () {
 
 var media = $("#audio").get(0);
 var currentPlay;
-////////////////      搜索后生成歌曲    ////////////////
-$('#top_searchBtn').on('click',function(str) {
-    var str = $("#inpSearch").val().trim();
-    if (!str) {
-		showTipBox("error","不能为空哟！");
-        return;
-	}
-    $.ajax({
-        url: '/search',
-        data: {
-            keywords: $('#inpSearch').val()
-        },
-        success(data) {
-            //  搜索概述
-            $("#search_count").find(".input").html($('#inpSearch').val());
-            $("#search_count").find(".count").html(data.result.songCount);
-
-            var html = '';
-            data.result.songs.forEach( function(song,i){
-                let artists = song.artists.map(artist=> {
-                    return artist.name;
-                }).join('');
-                timeObj = formatTime(song.duration/1000);
-                html += `<tr data-musicid="${song.id}">
-                    <td class="index" data-num="`+((+i+1)<10?"0"+(+i+1):(+i+1))+`">`+((+i+1)<10?"0"+(+i+1):(+i+1))+`</td>
-                    <td><i class="fa fa-heart-o addMylove" aria-hidden="true"></i>&nbsp;
-        <i class="fa fa-download" aria-hidden="true"></i></td>
-                    <td>${song.name}</td>
-                    <td>${artists}</td>
-                    <td>${song.album.name}</td>
-                    <td>`+timeObj.I+`:`+timeObj.S+`</td>
-                    <td style="display:none">${song.album.picUrl}</td>
-                </tr>`
-                $('tbody').html(html);
-
-                dblPlay();
-            });
-        }
-    });
-});
 
 //	歌曲时长设置和歌曲当前进度设置
 $(media).on("timeupdate",function () {
@@ -125,6 +87,8 @@ $('#playBtnGroup').find(".next").on("click",function () {
 	} else {
         currentPlay.className = '';
         if(!currentPlay.nextSibling) {
+			$(media).get(0).pause();
+			stylePlayBtn($('#playBtnGroup').find(".play"),"pause");
             showTipBox("info","已经是最后一首了！");
             return;
         }
@@ -162,6 +126,8 @@ $('#playBtnGroup').find(".prev").on("click",function () {
 		showTipBox("info","没有播放资源，请选择曲目");
 	} else {
         if(!currentPlay.previousSibling) {
+			$(media).get(0).pause();
+			stylePlayBtn($('#playBtnGroup').find(".play"),"pause");
             showTipBox("info","已经是第一首了！");
             return;
         }
@@ -228,7 +194,7 @@ $(media).on("pause",function () {
 
 // 播放完成 自动播放下一首 直至最后一首停止
 $(media).on("ended",function () {
-	console.log(1);
+	$('#playBtnGroup').find(".next").click();
 });
 
 var volume = 0.5;
@@ -237,6 +203,20 @@ $('#progress_box div:nth-child(2)').css("width","0%");
 $('#vol_progress_box div:nth-child(1)').css("width","50%");
 $('#vol_progress_box div:nth-child(1) div').css("width","14px");
 
+// 判断文件缓冲进度
+timer = setInterval(function () {
+	// 音频就绪 media.readyState==4 可用数据足以开始播放
+	if (media.readyState===4) {
+		// 获取已缓冲部分的 TimeRanges 对象
+		var timeRanges = media.buffered;
+		// 获取最后缓存范围的位置
+		var timeBuffered = timeRanges.end(timeRanges.length-1);
+		// 获取缓存进度，值为0到1
+		var bufferPercent = (timeBuffered / media.duration).toFixed(3);
+		// 更新缓冲进度条
+		$('#progress_cache').css("width",bufferPercent*100+"%");
+	}
+},1000);
 //改变音乐进度条
 dragProgress({
 	progressBar:$('#progress_bar'),
@@ -278,8 +258,6 @@ dragProgress({
        	return 0;
 	}
 });
-
-dblPlay();
 
 ////////////// 添加收藏  //////////////
 var loveList = [];
@@ -339,15 +317,15 @@ $('.list_create_001').on('click',function() {
 		</tr>`
 	})
 	$('tbody').html(loveHtml);
-
 	dblPlay();
 })
 
 
 //	存储已存在的首页歌曲
-	var indexList = $('.indexS');
+	var indexList = document.querySelectorAll('tbody tr');
 	indexList = $.makeArray( indexList );
 	//每次刷新，sessionStorage就存一次
+
 	indexList.forEach(function(item) {
 		indexList = sessionStorage.getItem('indexList');
 		if (!indexList) {
@@ -378,28 +356,10 @@ $('.list_create_001').on('click',function() {
 		}, [])
 		sessionStorage.setItem('indexList', JSON.stringify(indexList));
 	});
+	//	防止当前已经存在的歌，点击时序号变化
+	setTimeout(extPlay(),16)
 
-//////////////// 首页歌单点击		////////////////
+////////////////   首页歌单点击		////////////////
 $('.list_create_like ').on('click',function() {
-	loveHtml = '';
-	indexList = sessionStorage.getItem('indexList');
-	if (!indexList) {
-		indexList = [];
-	} else {
-		indexList = JSON.parse(indexList);
-	}
-	indexList.forEach(function(item,i) {
-		loveHtml += `<tr data-musicid="${item.id}">
-			<td class="index" data-num="`+((+i+1)<10?"0"+(+i+1):(+i+1))+`">`+((+i+1)<10?"0"+(+i+1):(+i+1))+`</td>
-			<td><i class="fa fa-heart-o addMylove" aria-hidden="true"></i>&nbsp;
-		<i class="fa fa-download" aria-hidden="true"></i></td>
-			<td>${item.name}</td>
-			<td>${item.singer}</td>
-			<td>${item.album}</td>
-			<td>${item.time}</td>
-			<td style="display:none">${item.picUrl}</td>
-		</tr>`
-	})
-	$('tbody').html(loveHtml);
-	dblPlay();
+	extPlay();
 });

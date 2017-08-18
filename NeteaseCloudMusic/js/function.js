@@ -155,3 +155,67 @@ function dblPlay() {
 		});
 	});
 }
+////// 搜索后出现歌曲
+function searchMusic() {
+	var str = $("#inpSearch").val().trim();
+    if (!str) {
+		showTipBox("error","不能为空哟！");
+        return;
+	}
+    $.ajax({
+        url: '/search',
+        data: {
+            keywords: $('#inpSearch').val()
+        },
+        success(data) {
+            //  搜索概述
+            $("#search_count").find(".input").html($('#inpSearch').val());
+            $("#search_count").find(".count").html(data.result.songCount);
+
+            var html = '';
+            data.result.songs.forEach( function(song,i){
+                let artists = song.artists.map(artist=> {
+                    return artist.name;
+                }).join('');
+                timeObj = formatTime(song.duration/1000);
+                html += `<tr data-musicid="${song.id}" class='songlen'>
+                    <td class="index" data-num="`+((+i+1)<10?"0"+(+i+1):(+i+1))+`">`+((+i+1)<10?"0"+(+i+1):(+i+1))+`</td>
+                    <td><i class="fa fa-heart-o addMylove" aria-hidden="true"></i>&nbsp;
+        <i class="fa fa-download" aria-hidden="true"></i></td>
+                    <td>${song.name}</td>
+                    <td>${artists}</td>
+                    <td>${song.album.name}</td>
+                    <td>`+timeObj.I+`:`+timeObj.S+`</td>
+                    <td style="display:none">${song.album.picUrl}</td>
+                </tr>`
+                $('tbody').html(html);
+
+                dblPlay();
+            });
+        }
+    });
+}
+//	首页已经存在的歌曲，切换时从stroage读取出来渲染，并加载播放
+function extPlay() {
+	loveHtml = '';
+	indexList = sessionStorage.getItem('indexList');
+	if (!indexList) {
+		indexList = [];
+	} else {
+		indexList = JSON.parse(indexList);
+	}
+	indexList.forEach(function(item,i) {
+		loveHtml += `<tr data-musicid="${item.id}">
+			<td class="index" data-num="`+((+i+1)<10?"0"+(+i+1):(+i+1))+`">`+((+i+1)<10?"0"+(+i+1):(+i+1))+`</td>
+			<td><i class="fa fa-heart-o addMylove" aria-hidden="true"></i>&nbsp;
+		<i class="fa fa-download" aria-hidden="true"></i></td>
+			<td>${item.name}</td>
+			<td>${item.singer}</td>
+			<td>${item.album}</td>
+			<td>${item.time}</td>
+			<td style="display:none">${item.picUrl}</td>
+		</tr>`
+	})
+	$('tbody').html(loveHtml);
+	dblPlay();
+}
