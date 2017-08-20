@@ -1,0 +1,25 @@
+.topNav .wrap {
+	width:auto;
+	padding:0 10px;	
+}
+.topNav {
+	display:none;
+}
+.logo img {
+	width:243px;
+}
+.donation img {
+	width:300px;
+}
+.support {
+	display:none;
+}	
+.search select {
+	display:block;
+	width:100%;	
+	border-radius:2px;
+	box-shadow: 0 -1px 1px rgba(0,0,0,0.3);
+}
+.search input[type="text"] {
+	margin-top:9px;
+}

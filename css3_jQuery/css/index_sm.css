@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+.topNav .wrap {
+	width:auto;
+	padding:0 20px;
+}
+.iconNav {
+	display:none;
+}
+.codeNav {
+	float:left;
+}
+.header {
+	margin-top:40px;
+	margin-bottom:40px;
+}
+.logo,
+.dontation {
+	float:none;
+	text-align:center;
+}
+.logo {
+	margin-bottom:15px;
+}
+.searchNav {
+	border:none;
+	border-radius:none;
+	background:none;
+	box-shadow:none;
+}
+.support {
+	float:none;
+	width:100%;
+	margin-left:10px;
+}	
+.support a {
+	padding:0 10px;
+}
+.search {
+	float:none;
+	width:auto;
+	margin: 0 20px;
+}
+.banner {
+	margin-top:14px;
+	border-radius:10px 10px 0 0;
+	padding:21px 20px 34px;
+}
+.downloadSp {
+	float: none;	
+	width: auto;
+} 
+.disUnder {
+	float: none;
+	width: auto;
+}
+.disUnder li {
+	margin-top: 15px;
+	float: none;
+	width: auto;
+}
