@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+	#box {
+		position: relative;
+		margin: 100px auto;
+		width: 400px;
+		height: 400px;
+		perspective: 500px;
+	}
+	#wrap {
+		position: relative;
+		padding: 100px;
+		width: 200px;
+		height: 200px;
+		transform-style: preserve-3d;
+		transition: 3s;
+	}
+	#box:hover #wrap {
+		transform:  rotateY(360deg) rotateX(360deg);
+	}
+
+	#div {
+		position: absolute;
+		left: 150px;
+		top: 150px;
+		width: 100px;
+		height: 100px;
+		transform-style: preserve-3d;
+	}
+	#div div {
+		box-sizing: border-box;
+		position: absolute;
+		left: 0;
+		top: 0px;
+		width: 100px;
+		height: 100px;
+		color: #fff;
+		text-align: center;
+		background: #000;
+		font: 50px/108px Arial;
+	}
+	#div div:nth-of-type(1){
+		transform: rotateY(0) translateZ(50px);
+	}
+	#div div:nth-of-type(2){
+		transform: rotateY(90deg) translateZ(50px);
+	}
+	#div div:nth-of-type(3){
+		transform: rotateY(180deg) translateZ(50px);
+	}
+	#div div:nth-of-type(4){
+		transform: rotateY(270deg) translateZ(50px);
+	}
+	#div div:nth-of-type(5){
+		transform: rotateX(90deg) translateZ(50px);
+	}
+	#div div:nth-of-type(6){
+		transform: rotateX(-90deg) translateZ(50px);
+	}
+	#div2 {
+		position: absolute;
+		left: 100px;
+		top: 100px;
+		width: 200px;
+		height: 200px;
+		transform-style: preserve-3d;
+		transition: 3s;
+	}
+	#div2 div {
+		box-sizing: border-box;
+		position: absolute;
+		left: 0;
+		top: 0px;
+		width: 200px;
+		height: 200px;
+		border: 2px solid #000;
+		text-align: center;
+		background: #ccc;
+		font: 100px/198px Arial;
+		opacity: .5;
+		transition: 3s;
+	}
+	#div2 div:nth-of-type(1){
+		transform: rotateY(0) translateZ(100px);
+	}
+	#div2 div:nth-of-type(2){
+		transform: rotateY(90deg) translateZ(100px);
+	}
+	#div2 div:nth-of-type(3){
+		transform: rotateY(180deg) translateZ(100px);
+	}
+	#div2 div:nth-of-type(4){
+		transform: rotateY(270deg) translateZ(100px);
+	}
+	#div2 div:nth-of-type(5){
+		transform: rotateX(90deg) translateZ(100px);
+	}
+	#div2 div:nth-of-type(6){
+		transform: rotateX(-90deg) translateZ(100px);
+	}
+	#box:hover #div2 div:nth-of-type(1){
+		transform: rotateY(0) translateZ(200px);
+	}
+	#box:hover #div2 div:nth-of-type(2){
+		transform: rotateY(90deg) translateZ(200px);
+	}
+	#box:hover #div2 div:nth-of-type(3){
+		transform: rotateY(180deg) translateZ(200px);
+	}
+	#box:hover #div2 div:nth-of-type(4){
+		transform: rotateY(270deg) translateZ(200px);
+	}
+	#box:hover #div2 div:nth-of-type(5){
+		transform: rotateX(90deg) translateZ(200px);
+	}
+	#box:hover #div2 div:nth-of-type(6){
+		transform: rotateX(-90deg) translateZ(200px);
+	}
+	/*
+		正N边形外角和 = 360
+		正N边形外角 = 360/N;
+		(180 - 正N边形外角)/2
+		正切：Math.tan(); 直角三角形，对边和临边的比值
+	*/
+</style>
+<script type="text/javascript">
+(function(){
+	var n = 6; //边数
+	var width = 200; //边长
+	var deg = 360/n;//外角
+	var deg2 = 	(180 - deg)/2;//夹角
+	var tan = Number((Math.tan(deg2*Math.PI/180)).toFixed(4));//正切值
+	var R = width/2 * tan; //旋转半径
+	console.log(R);
+})();
+</script>
+</head>
+<body>
+<div id="box">
+	<div id="wrap">
+		<div id="div">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+		</div>
+		<div id="div2">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+		</div>
+	</div>	
+</div>	
+</body>
+</html>
