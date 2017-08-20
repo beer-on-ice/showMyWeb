@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>韩雪冬网站效果 - 妙味课堂 - www.miaov.com</title>
+<title>轮播图demo</title>
 <!--[if lte IE 6]>
 <script src="js/DD_belatedPNG_0.0.8a.js" type="text/javascript"></script>
     <script type="text/javascript">
@@ -25,7 +25,7 @@ window.onload = function() {
 	var line = document.querySelector('.line');
 	var timer = 0;
 	var arrs = [];
-	
+
 	// 函数自执行，将每个li下图片的宽度改为100%，跟随li，所以改变li宽度即改变img宽度
 	(function(){
 	    for(var i = 0; i <lis.length;i++){
@@ -34,7 +34,7 @@ window.onload = function() {
 	        img.style.width = "100%";
 	    }
 	})();
-	
+
 	//	鼠标移入移出动画
 	prev.onmouseover = function() {
 		startMove({
@@ -154,9 +154,9 @@ window.onload = function() {
 			})
 		}
 	};
-	
-	
-	//	获取li的属性，并存入数组的对象中	
+
+
+	//	获取li的属性，并存入数组的对象中
 	for(var i=0;i<lis.length;i++) {
 		arrs[i] = {};
 		arrs[i].width = css(lis[i],"width");
@@ -164,14 +164,14 @@ window.onload = function() {
         arrs[i].top = css(lis[i],"top");
         arrs[i].opacity = css(lis[i],"opacity");
         arrs[i].zIndex = css(lis[i],"zIndex");
-	}	
+	}
 	//	console.log(arrs)
-	
-	//	鼠标点击图片切换	
+
+	//	鼠标点击图片切换
 	prev.onclick = function() {
 		arrs.push(arrs.shift());
 		getStyle() ;
-	};	
+	};
 	next.onclick = function() {
 		arrs.unshift(arrs.pop());
 		getStyle();
@@ -179,7 +179,7 @@ window.onload = function() {
 	//	切换动画
 	function getStyle() {
 		//	边框事件
-		css(line,'opacity',0);	
+		css(line,'opacity',0);
 		//	forEach写法
 		arrs.forEach(function(item,index) {
 			css(lis[index],'zIndex',arrs[index].zIndex);
@@ -240,7 +240,7 @@ window.onload = function() {
         <span class="ico"></span>
         <span class="txt"></span>
     </a>
-	
+
 	<div class="next_div"></div>
     <a class="next" href="###">
         <span class="ico1"></span>
@@ -251,14 +251,14 @@ window.onload = function() {
 	<div class="line"></div>
 
     <ul>
-        <li class="pos_0"><a href="javascript:;"><img src="images/8.jpg" width="100" alt="妙味课堂 www.miaov.com" longdesc="javascript:;" /></a></li>
-        <li class="pos_1"><a href="javascript:;"><img src="images/1.jpg" width="270" alt="妙味课堂 www.miaov.com" longdesc="javascript:;" /></a></li>
-        <li class="pos_2"><a href="javascript:;"><img src="images/2.jpg" width="510" alt="妙味课堂 www.miaov.com" longdesc="javascript:;" /></a></li>
-        <li class="pos_3"><a href="javascript:;"><img src="images/3.jpg" width="680" alt="妙味课堂 www.miaov.com" longdesc="javascript:;" /></a></li>
-        <li class="pos_4"><a href="javascript:;"><img src="images/4.jpg" width="510" alt="妙味课堂 www.miaov.com" longdesc="javascript:;" /></a></li>
-        <li class="pos_5"><a href="javascript:;"><img src="images/5.jpg" width="270" alt="妙味课堂 www.miaov.com" longdesc="javascript:;" /></a></li>
-        <li class="pos_6"><a href="javascript:;"><img src="images/6.jpg" width="270" alt="妙味课堂 www.miaov.com" longdesc="javascript:;" /></a></li>
-        <li class="pos_6"><a href="javascript:;"><img src="images/7.jpg" width="270" alt="妙味课堂 www.miaov.com" longdesc="javascript:;" /></a></li>
+        <li class="pos_0"><a href="javascript:;"><img src="images/8.jpg" width="100" longdesc="javascript:;" /></a></li>
+        <li class="pos_1"><a href="javascript:;"><img src="images/1.jpg" width="270" longdesc="javascript:;" /></a></li>
+        <li class="pos_2"><a href="javascript:;"><img src="images/2.jpg" width="510" longdesc="javascript:;" /></a></li>
+        <li class="pos_3"><a href="javascript:;"><img src="images/3.jpg" width="680" longdesc="javascript:;" /></a></li>
+        <li class="pos_4"><a href="javascript:;"><img src="images/4.jpg" width="510" longdesc="javascript:;" /></a></li>
+        <li class="pos_5"><a href="javascript:;"><img src="images/5.jpg" width="270" longdesc="javascript:;" /></a></li>
+        <li class="pos_6"><a href="javascript:;"><img src="images/6.jpg" width="270" longdesc="javascript:;" /></a></li>
+        <li class="pos_6"><a href="javascript:;"><img src="images/7.jpg" width="270" longdesc="javascript:;" /></a></li>
     </ul>
 
 </div>
