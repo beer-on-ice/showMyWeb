@@ -68,7 +68,8 @@ table,td,th{
     transform:translate(0,-50%);
 }
 .menu_btngroups{
-	margin:0 20px 0 100px;
+	margin:0 10px 0 100px;
+	width:70px;
 }
 .menu_btngroups>.btn{
 	width:50px;

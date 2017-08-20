@@ -261,8 +261,12 @@ dragProgress({
 
 ////////////// 添加收藏  //////////////
 var loveList = [];
+//	事件委托
 $('table').delegate('.addMylove', 'click', function() {
 	var love = this.parentNode.parentNode;
+	$(this).removeClass('fa-heart-o').addClass('fa-heart')
+	console.log($(this));
+
 	//用sessionStorage来记录已经加入歌单的
 	loveList = sessionStorage.getItem('loveList');
 	if (!loveList) {
@@ -307,7 +311,7 @@ $('.list_create_001').on('click',function() {
 	loveList.forEach(function(item,i) {
 		loveHtml += `<tr data-musicid="${item.id}">
 			<td class="index" data-num="`+((+i+1)<10?"0"+(+i+1):(+i+1))+`">`+((+i+1)<10?"0"+(+i+1):(+i+1))+`</td>
-			<td><i class="fa fa-heart-o addMylove" aria-hidden="true"></i>&nbsp;
+			<td><i class="fa fa-heart addMylove" aria-hidden="true"></i>&nbsp;
 		<i class="fa fa-download" aria-hidden="true"></i></td>
 			<td>${item.name}</td>
 			<td>${item.singer}</td>

@@ -189,7 +189,7 @@ function searchMusic() {
                     <td style="display:none">${song.album.picUrl}</td>
                 </tr>`
                 $('tbody').html(html);
-
+					
                 dblPlay();
             });
         }
