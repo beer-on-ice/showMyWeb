@@ -1,61 +1,328 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width,user-scalable=no" />
 <meta charset="utf-8">
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-<!--[if lt IE 9]>
-<script type="text/javascript" src="js/html5shiv.min.js"></script>
-<script type="text/javascript" src="js/respond.min.js"></script>
-<![endif]-->
+<script type="text/javascript">
+(function(){
+	var meta = document.createElement("meta");
+	var scale = 1;
+	scale = 1/window.devicePixelRatio;
+	meta.name = "viewport";
+	meta.content="user-scalable=no,initial-scale="+scale+",minimum-scale="+scale+",maximum-scale="+scale;
+	document.head.appendChild(meta);
+})();	
+</script>
+<script type="text/javascript">
+(function(){
+	var html = document.documentElement;
+	var width = html.clientWidth;
+	var DPR = window.devicePixelRatio;
+	var screenW = width/DPR;
+	if(screenW > 540){
+		width = 540*DPR;
+	}
+	html.style.fontSize = width/10.8+"px";
+})();	
+</script>
 <title></title>
+<link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
+<header id="header">
+	<span class="jd"></span>
+	<input type="search" class="search" name="">
+</header>
+<div class="container" id="swipePic">
+	<ul class="picList">
+		<li>
+			<a href="#">
+				<img src="img/img1.jpg">
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<img src="img/img2.jpg">
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<img src="img/img3.jpg">
+			</a>
+		</li>
+	</ul>
+	<nav class="swipeNav">
+		<a href="javascript:;" class="active"></a>
+		<a href="javascript:;"></a>
+		<a href="javascript:;"></a>
+		<a href="javascript:;"></a>
+		<a href="javascript:;"></a>
+	</nav>
+</div>
+<ul class="container clearFix" id="apps">
+	<li>
+		<a href="#">京东超市</a>
+	</li>
+	<li>
+		<a href="#">京东超市</a>
+	</li>
+	<li>
+		<a href="#">京东超市</a>
+	</li>
+	<li>
+		<a href="#">京东超市</a>
+	</li>
+	<li>
+		<a href="#">京东超市</a>
+	</li>
+	<li>
+		<a href="#">京东超市</a>
+	</li>
+	<li>
+		<a href="#">京东超市</a>
+	</li>
+	<li>
+		<a href="#">京东超市</a>
+	</li>
+	<li>
+		<a href="#">京东超市</a>
+	</li>
+	<li>
+		<a href="#">京东超市</a>
+	</li>
+</ul>
+<section class="jdnews">
+	<h2 class="title">
+		<span>京东快报</span>
+	</h2>
+	<div class="overUp">
+		<p>哈哈哈哈哈哈哈哈</p>
+		<p>呵呵呵呵呵呵呵呵</p>
+		<p>嘻嘻嘻嘻嘻嘻嘻嘻</p>
+	</div>
+	<a href="javascript:;" class="more">更多</a>
+</section>
+<section class="container seckill">
+	<header class="header">
+		<h2 class="title">
+			<span class="textOver">京东秒杀</span>
+		</h2>
+		<nav class="timeNav">
+			<p class="active">
+				<time>18点场</time>
+				<time><span>00</span>:<span>00</span>:<span>00</span></time>
+			</p>
+			<p>
+				<time>20点场</time>
+				<time><span>00</span>:<span>00</span>:<span>00</span></time>
+			</p>
+			<p>
+				<time>22点场</time>
+				<time><span>00</span>:<span>00</span>:<span>00</span></time>
+			</p>
+		</nav>
+		<a href="#" class="more">更多</a>
+	</header>
+	<ul class="seckillShop">
+		<li>
+			<a href="#">
+				<div class="img">
+					<img src="img/shop1.jpg">
+					<mark>好货</mark>
+				</div>	
+				<strong>￥188</strong>
+				<span>￥299</span>
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<img src="img/shop2.jpg">
+				<strong>￥188</strong>
+				<span>￥299</span>
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<img src="img/shop3.jpg">
+				<strong>￥188</strong>
+				<span>￥299</span>
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<img src="img/shop3.jpg">
+				<strong>￥188</strong>
+				<span>￥299</span>
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<img src="img/shop5.jpg">
+				<strong>￥188</strong>
+				<span>￥299</span>
+			</a>
+		</li>
+		<li>
+			<a href="#">
+				<div class="img">
+					<img src="img/shop1.jpg">
+					<mark>好货</mark>
+				</div>	
+				<strong>￥188</strong>
+				<span>￥299</span>
+			</a>
+		</li>
+	</ul>
+</section>
 <div class="container">
-	<div class="dropdown center-block">
-		<a href="javascript:;" class="btn btn-default" data-toggle="dropdown">
-			下拉菜单
-			<span class="caret"></span>
-		</a>
-		<ul class="dropdown-menu">
-			<li class="dropdown-header">菜单标题</li>
-			<li class="divider"></li>
-			<li>菜单选项</li>
-			<li>菜单选项</li>
-			<li>菜单选项</li>
-		</ul>
-	</div>
-	<div class="container">
-	<div class="btn-group">
-		<a href="#" class="btn btn-warning">按钮</a>
-		<a href="#" class="btn btn-default">按钮</a>
-		<a href="#" class="btn btn-info">按钮</a>
-		<a href="#" class="btn btn-danger">按钮</a>
-	</div>
-	<div class="btn-toolbar">
-		<div class="btn-group">
-			<a href="#" class="btn btn-default">按钮</a>
-			<a href="#" class="btn btn-default">按钮</a>
-			<a href="#" class="btn btn-info">按钮</a>
-			<a href="#" class="btn btn-default">按钮</a>
-		</div>
-		<div class="btn-group btn-group-lg">
-		<a href="#" class="btn btn-warning">按钮</a>
-		<a href="#" class="btn btn-default">按钮</a>
-		<a href="#" class="btn btn-info">按钮</a>
-		<a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-			下拉菜单
-			<span class="caret"></span>
-		</a>
-		<ul class="dropdown-menu dropdown-menu-right">
-			<li><a href="#">菜单选项</a></li>
-			<li><a href="#">菜单选项</a></li>
-			<li><a href="#">菜单选项</a></li>
-		</ul>
-	</div>
+	<a href="#">
+		<img src="img/banner.jpg" class="banner">
+	</a>
 </div>
-</div>
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<nav id="footer">
+		<a ref="javascript:;">首页</a>
+		<a ref="javascript:;" class="a2">分类</a>
+		<a ref="javascript:;">发现</a>
+		<a ref="javascript:;">购物车</a>
+		<a ref="javascript:;">我的</a>
+</nav>
+<script type="text/javascript">
+scrollPic("swipePic");
+function scrollPic(idName) {
+	var wrap = document.querySelector("#"+idName);
+	var list = wrap.querySelector(".picList");
+	list.innerHTML += list.innerHTML;
+	var lis = wrap.querySelectorAll(".picList li");
+	var css = document.createElement('style');
+	var nav = wrap.querySelectorAll(".swipeNav a");
+	var style = "#wrap{height:"+ lis[0].offsetHeight+"px}";
+	var timer = 0;
+	style+= "#"+idName +" .picList{width:"+lis.length+"00%}";
+	style+= "#"+idName +" .picList li{width:"+(1/lis.length*100)+"%}"
+	css.innerHTML+= style;
+	document.head.appendChild(css);
+	var startPoint = 0;
+	var startX = 0;
+	var now = 0;
+	var isMove = true;
+	var isFirst = true;
+	cssTransform(list,"translateZ",0.01);
+	cssTransform(list,"translateX",0);
+	auto();
+	wrap.addEventListener(
+		"touchstart",
+		function(e) {
+			clearInterval(timer);
+			list.style.transition = "none";
+			var translateX = cssTransform(list,"translateX");
+			now = Math.round(-translateX / wrap.offsetWidth);
+			if(now == 0) {
+				now = nav.length;
+			}
+			if(now == lis.length-1) {
+				now = nav.length-1;
+			}
+			cssTransform(list,"translateX",-now * wrap.offsetWidth);
+			startPoint = {pageX: e.changedTouches[0].pageX,pageY: e.changedTouches[0].pageY}; //存址 存值
+			startX = cssTransform(list,"translateX");
+			isMove = true;
+			isFirst = true;
+		}
+	);
+	wrap.addEventListener(
+		"touchmove",
+		function(e) {
+			if(!isMove) {
+				return;
+			}
+			var nowPoint = e.changedTouches[0];
+			var disX = nowPoint.pageX - startPoint.pageX;
+			var disY = nowPoint.pageY - startPoint.pageY;
+			if(isFirst) {
+				isFirst = false;
+				if(Math.abs(disY) > Math.abs(disX)) {
+					isMove = false;
+				}
+			}
+			if(isMove) {
+				cssTransform(list,"translateX",startX + disX);
+			}
+		}
+	);
+	wrap.addEventListener(
+		"touchend",
+		function(e) {
+			var translateX = cssTransform(list,"translateX");
+			now = Math.round(-translateX / wrap.offsetWidth);
+			tab();
+			auto();
+		}
+	);
+	function auto() {
+		clearInterval(timer);
+		timer = setInterval(
+			function() {
+				if(now == lis.length-1) {
+					now = nav.length-1;
+				}
+				list.style.transition = "none";
+				cssTransform(list,"translateX",-now * wrap.offsetWidth);
+				setTimeout(
+					function () {
+						now++;
+						tab();	
+					},50
+				);
+			},3000
+		);
+	}
+	function tab() {
+		list.style.transition = ".5s";
+		cssTransform(list,"translateX",-now * wrap.offsetWidth);
+		for(var i = 0 ; i < nav.length; i++) {
+			nav[i].className = "";
+		}
+		nav[now%nav.length].className = "active";
+	}
+}	
+function cssTransform(el,attr,val) {
+	if(!el.transform){
+		el.transform = {};
+	}
+	if(arguments.length>2) {
+		el.transform[attr] = val;
+		var sVal = "";
+		for(var s in el.transform){
+			switch(s) {
+				case "rotate":
+				case "skewX":
+				case "skewY":
+					sVal +=s+"("+el.transform[s]+"deg) ";
+					break;
+				case "translateX":
+				case "translateY":
+				case "translateZ":
+					sVal +=s+"("+el.transform[s]+"px) ";
+					break;
+				case "scaleX":
+				case "scaleY":
+				case "scale":
+					sVal +=s+"("+el.transform[s]+") ";
+					break;	
+			}
+			el.style.WebkitTransform = el.style.transform = sVal;
+		}
+	} else {
+		val  = el.transform[attr];
+		if(typeof val == "undefined" ) {
+			if(attr == "scale" || attr == "scaleX" || attr == "scaleY"  ) {
+				val = 1;
+			} else {
+				val = 0;
+			}
+		}
+		return val;
+	}
+}
+</script>
 </body>
 </html>
