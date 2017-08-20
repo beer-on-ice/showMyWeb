@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style type="text/css">
+.nav {
+	padding: 50px;
+	text-align: center;
+}
+.nav * {
+	display: inline-block;
+	vertical-align: middle;
+}
+.nav a {
+	width: 20px;
+	height: 20px;
+	text-decoration:none;
+	color: #ccc;
+	font:20px/1 Arial;
+}
+.nav span {
+	width: 100px;
+	font: 12px/20px "宋体";
+	background: #f60;
+	color: #fff;
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+    <star
+		@judge="change(index)"
+		@mouseover.native ='hover(index)' @mouseout.native='noHover(index)'
+		v-for='item,index in stars' :view='view'>
+		{{item}}
+	</star>
+	<span
+		v-for='item,index in title'
+		v-show ='index == view'>
+	{{item}}
+</span>
+</nav>
+</body>
+<script src="js/vue.js" charset="utf-8"></script>
+<script type="text/javascript">
+    Vue.component('star',{
+		props:['view'],
+        template: `
+            <a href="javascript:;" @click = 'click' >★</a>
+        `,
+        methods: {
+            click() {
+                this.$emit('judge');
+            }
+        }
+    })
+    let nav = new Vue({
+        el:".nav",
+		data: {
+			stars: [
+				'★',
+				'★',
+				'★',
+				'★',
+				'★'
+			],
+			title: [
+				"极差",
+				"差",
+				"一般",
+				"好",
+				"极好"
+			],
+			view:-1
+		},
+        methods: {
+            change(index) {
+				this.view = index;
+				var a = document.querySelectorAll('a');
+                for(var i=0;i<a.length;i++) {
+					a[i].style.color = ''
+				};
+				for(var i=0;i<=index;i++) {
+					a[i].style.color = 'red'
+				}
+            },
+			hover(index) {
+				var a = document.querySelectorAll('a');
+				for(var i=0;i<=index;i++) {
+					if(a[i].style.color =='red'){
+						a[i].style.color ='red'
+					} else {
+						a[i].style.color = 'pink'
+					}
+				}
+
+			},
+			noHover(index) {
+				var a = document.querySelectorAll('a');
+				for(var i=0;i<a.length;i++) {
+					if(a[i].style.color =='red'){
+						a[i].style.color ='red'
+					} else {
+						a[i].style.color = ''
+					}
+				}
+			}
+        }
+    })
+</script>
+</html>
