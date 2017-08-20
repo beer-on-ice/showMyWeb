@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+body,
+ul,
+input,
+p {
+	margin:0;
+	padding:0;
+	list-style:none;
+	outline:none;
+}
+#box {
+	width:482px;
+	height:301px;
+	margin:50px auto;
+	background:url(img/pbg.jpg) no-repeat;
+	position:relative;
+}
+#box ul {
+	width:100%;
+	padding-top:20px;
+}
+#box li {
+	width:100%;
+	font:14px/36px "宋体";
+	height:36px;
+}
+#box input {
+	float:left;
+	height:36px;
+	margin-left:20px;
+}
+#box label {
+	float:left;
+	width:100%;
+}
+#box p {
+	display:inline-block;
+	width:360px;
+	height:36px;
+	margin-left:16px;
+}
+#box span {
+	float:right;
+	height:36px;
+	margin-right:20px;
+}
+#box input {
+	vertical-align:middle;
+}
+#choseAll {
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	font:bold 15px/36px "宋体";
+	color:#fff;
+}
+#choseAll label {
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	padding-left:46px;
+}
+.color1 {
+	background: #fff;
+}
+.color2 {
+	background: #f7c5ce;
+}
+.hover {
+	background: #e76a81;
+}
+</style>
+</head>
+<body>
+<section id="box">
+	<ul>
+		<li v-for='item in songInfo'>
+			<label>
+				<input type="checkbox"  @click="singleSelect()" v-model="item.isCheck">
+				<p>{{item.name}}</p>
+				<span>{{item.singer}}</span>
+			</label>
+		</li>
+	</ul>
+	<div id="choseAll">
+		<input type="checkbox" id="checkAll" @click="allSelect()" v-model="allInfo.allCheck">
+		<label for="checkAll">{{allInfo.text}}</label>
+	</div>
+</section>
+</body>
+<script src="js/vue.js" charset="utf-8"></script>
+<script type="text/javascript">
+    let box = new Vue({
+        el: "#box",
+        data: {
+            allInfo: {
+               allCheck: false,
+               text: '全选'
+           },
+            songInfo: [
+                {
+                    name:'泡沫',
+                    singer: '邓紫棋',
+                    isCheck: false
+                },
+                {
+                    name:'说爱你',
+                    singer: '蔡依林',
+                    isCheck: false
+                },
+                {
+                    name:'稻香',
+                    singer: '周杰伦',
+                    isCheck: false
+                },
+                {
+                    name:'我的梦',
+                    singer: '张靓颖',
+                    isCheck: false
+                },
+                {
+                    name:'怎么说我不爱你',
+                    singer: '萧敬腾',
+                    isCheck: false
+                },
+                {
+                    name:'无处安放',
+                    singer: '张若曦',
+                    isCheck: false
+                }
+            ]
+        },
+        methods: {
+            allSelect() {
+                //onchange时所有看情况
+                this.songInfo.forEach(item => {
+                    item.isCheck = this.allInfo.allCheck
+                })
+            },
+            singleSelect() {
+                //每次点击都筛选出已经选中的
+                var hasSelect = this.songInfo.filter(item=>{
+                    return item.isCheck == true
+                });
+                //判断已经选中的长度
+                hasSelect.length == this.songInfo.length ? this.allInfo.allCheck = true : this.allInfo.allCheck = false;
+            }
+        }
+    })
+
+</script>
+</html>
