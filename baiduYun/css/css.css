@@ -185,7 +185,7 @@ ul {
 #main {
   	width: 100%;
 	float: left;
-  	height:565px;
+  	height:100%;
 }
 #main .mainR {
   position:relative;
